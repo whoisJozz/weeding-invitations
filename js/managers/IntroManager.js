@@ -10,7 +10,6 @@ export default class IntroManager {
         this.audioManager = audioManager;
         
         this.isTransitioning = false;
-        // Tiempo en segundos antes del final del video para iniciar el fade
         this.fadeLeadTime = 1.5; 
 
         this.init();
@@ -19,32 +18,34 @@ export default class IntroManager {
     init() {
         if (!this.introSection || !this.video || !this.heroSection) return;
 
-        // Click en cualquier parte de la pantalla inicia la experiencia
-        this.introSection.addEventListener('click', () => this.startExperience(), { once: true });
-        
-        // Monitorear el tiempo del video para iniciar el fade anticipado
+        // Se usa 'pointerdown' para unificar la respuesta táctil rápida en iOS/Android y clicks en Desktop
+        this.introSection.addEventListener('pointerdown', () => this.startExperience(), { once: true });
         this.video.addEventListener('timeupdate', () => this.checkVideoProgress());
     }
 
     startExperience() {
-        // Fade out de la leyenda editorial
+        // Fade out de la leyenda
         gsap.to(this.startText, {
             opacity: 0,
-            duration: 1.5,
-            ease: "power2.inOut"
+            duration: 1.2,
+            ease: "power2.inOut",
+            overwrite: "auto"
         });
 
-        // Iniciar video y música simultáneamente
-        this.video.play().catch(() => this.forceTransition());
-        this.audioManager.play();
+        // Sincronización absoluta: Video y Audio se disparan en el mismo tick de ejecución[cite: 7, 8]
+        this.video.muted = false; // Asegurar que el video pueda emitir sonido si lo tuviera
+        const videoPlayPromise = this.video.play();
+        const audioPlayPromise = this.audioManager.playRaw(); // Delegamos la orden de play nativa
+
+        if (videoPlayPromise !== undefined) {
+            videoPlayPromise.catch(() => this.forceTransition());
+        }
     }
 
     checkVideoProgress() {
         if (this.isTransitioning || !this.video.duration) return;
-
         const timeRemaining = this.video.duration - this.video.currentTime;
         
-        // Iniciar transición cinematográfica antes de que el video termine
         if (timeRemaining <= this.fadeLeadTime) {
             this.isTransitioning = true;
             this.transitionToHero();
@@ -66,23 +67,19 @@ export default class IntroManager {
             onComplete: () => {
                 this.introSection.style.display = 'none';
                 this.video.pause();
-                
-                // Disparar evento de completado
                 window.dispatchEvent(new CustomEvent('intro:completed'));
             }
         });
 
-        // Fade out de la introducción y video
         tl.to(this.introSection, {
             opacity: 0,
-            duration: 2,
+            duration: 2.5,
             ease: "power1.inOut"
         })
-        // Fade in del Hero
         .to(this.heroSection, { 
             opacity: 1, 
-            duration: 2, 
+            duration: 2.5, 
             ease: "power2.out" 
-        }, "-=1.2");
+        }, "-=1.5");
     }
 }

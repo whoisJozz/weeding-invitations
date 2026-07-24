@@ -2,36 +2,26 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Restricción estricta de zoom para mantener la inmersión cinematográfica -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>A&Y Experience</title>
     
-    <!-- Tipografía principal obligatoria -->
     <link rel="stylesheet" href="css/base/typography.css">
-    <!-- CSS Modular centralizado -->
     <link rel="stylesheet" href="css/main.css">
     
-    <!-- Dependencias: GSAP & Lenis -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js" defer></script>
     
-    <!-- JS Principal -->
     <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
-    <!-- Experiencia de Introducción -->
     <section id="intro" class="intro-section" aria-label="Introducción cinematográfica">
-        <!-- Leyenda de interacción táctil (Sprint 01.2) -->
         <div id="start-text" class="intro-text">Toca para abrir</div>
-        
-        <!-- Video sin autoplay, precargado (Sprint 01.1) -->
-        <video id="intro-video" class="intro-video" src="assets/video/intro.mp4" playsinline preload="auto"></video>
-        
-        <!-- Audio de fondo sincronizado (Sprint 01.1) -->
+        <video id="intro-video" class="intro-video" src="assets/video/intro.mp4" playsinline preload="auto" muted></video>
         <audio id="bg-audio" src="assets/audio/background.mp3" loop preload="auto"></audio>
     </section>
 
-    <!-- Hero / Portada (Oculto inicialmente) -->
     <section id="hero" class="hero-section" aria-hidden="true">
         <div class="hero-content">
             <h1 class="hero-title">A & Y</h1>
