@@ -1,6 +1,6 @@
 /**
  * HeroManager.js
- * Orquesta la construcción editorial del Hero y el sistema de partículas.
+ * Editorial Polish.
  */
 
 export default class HeroManager {
@@ -14,7 +14,7 @@ export default class HeroManager {
         this.sparklesContainer = document.getElementById('sparkles-container');
         
         this.activeSparkles = 0;
-        this.maxSparkles = 4; // Límite estricto de brillos
+        this.maxSparkles = 4;
     }
 
     playEntrySequence() {
@@ -22,30 +22,28 @@ export default class HeroManager {
             onComplete: () => this.initSparkleSystem()
         });
 
-        // 1. El Marco y las Flores (El lienzo)
-        tl.to(this.frame, { opacity: 1, duration: 2, ease: "power2.inOut" })
-          .to(this.flowers, { opacity: 0.85, duration: 2.5, ease: "power1.inOut", stagger: 0.5 }, "-=1");
+        tl.to(this.frame, { opacity: 1, duration: 2.5, ease: "power1.inOut" })
+          /* FIX DA: Flores reducidas al 25% de opacidad para que no compitan */
+          .to(this.flowers, { opacity: 0.25, duration: 3, ease: "power1.inOut", stagger: 0.5 }, "-=1.5");
 
-        // 2. El Kicker ("Nuestra Boda")
         tl.fromTo(this.kicker, 
-            { opacity: 0, y: 10 }, 
-            { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" }, "-=0.5"
+            { opacity: 0, y: 15 }, 
+            { opacity: 1, y: 0, duration: 2, ease: "power2.out" }, "-=0.5"
         );
 
-        // 3. Los Nombres
-        tl.fromTo(this.names[0], { opacity: 0, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 1.5, ease: "power2.out" }, "-=0.5")
-          .fromTo(this.ampersand, { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 1.5, ease: "power2.out" }, "-=1")
-          .fromTo(this.names[1], { opacity: 0, filter: "blur(4px)" }, { opacity: 1, filter: "blur(0px)", duration: 1.5, ease: "power2.out" }, "-=1");
+        tl.fromTo(this.names[0], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 2, ease: "power2.out" }, "-=1")
+          .fromTo(this.ampersand, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 2, ease: "power2.out" }, "-=1.5")
+          .fromTo(this.names[1], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 2, ease: "power2.out" }, "-=1.5");
 
-        // 4. La Frase Pequeña
         tl.fromTo(this.quote, 
             { opacity: 0, y: 10 }, 
-            { opacity: 1, y: 0, duration: 2, ease: "power2.out" }, "-=0.5"
+            { opacity: 1, y: 0, duration: 2.5, ease: "power2.out" }, "-=1"
         );
     }
 
     initSparkleSystem() {
-        setInterval(() => this.spawnSparkle(), 1500);
+        /* FIX DA: El polvo aparece con mucha menor frecuencia */
+        setInterval(() => this.spawnSparkle(), 3000);
     }
 
     spawnSparkle() {
@@ -56,7 +54,6 @@ export default class HeroManager {
         const sparkle = document.createElement('div');
         sparkle.classList.add('sparkle');
         
-        // Posicionamiento aleatorio dentro del marco
         const top = Math.random() * 90 + 5; 
         const left = Math.random() * 90 + 5;
         
@@ -65,14 +62,15 @@ export default class HeroManager {
         
         this.sparklesContainer.appendChild(sparkle);
 
+        /* FIX DA: Animación extremadamente lenta (12 segundos) y casi imperceptible */
         gsap.timeline({
             onComplete: () => {
                 sparkle.remove();
                 this.activeSparkles--;
             }
         })
-        .to(sparkle, { opacity: 0.8, scale: 1.5, duration: 2, ease: "sine.inOut" })
-        .to(sparkle, { rotation: 45, duration: 4, ease: "none" }, "-=2")
-        .to(sparkle, { opacity: 0, scale: 0, duration: 2, ease: "sine.inOut" }, "-=2");
+        .to(sparkle, { opacity: 0.6, scale: 1.5, duration: 4, ease: "sine.inOut" })
+        .to(sparkle, { y: -15, x: 10, duration: 8, ease: "none" }, "-=4") /* Ligera deriva en el aire */
+        .to(sparkle, { opacity: 0, scale: 0.5, duration: 4, ease: "sine.inOut" }, "-=4");
     }
 }

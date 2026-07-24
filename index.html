@@ -2,8 +2,15 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>A&Y Experience</title>
+    <!-- FIX iOS: viewport-fit=cover para utilizar toda la pantalla y respetar el Safe Area -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>A&Y | Nuestra Boda</title>
+    
+    <!-- FIX 404: Favicon SVG inline (Evita peticiones fallidas a favicon.ico) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>">
+    
+    <!-- FIX CLS: Preload de la fuente principal crítica -->
+    <link rel="preload" href="assets/fonts/Symphony.woff2" as="font" type="font/woff2" crossorigin>
     
     <link rel="stylesheet" href="css/base/typography.css">
     <link rel="stylesheet" href="css/main.css">
@@ -15,26 +22,23 @@
     <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
-    <!-- ACTO I: Experiencia de Introducción (Sprint 01.5 + QA) -->
+    <!-- ACTO I: Intro -->
     <section id="intro" class="intro-section" aria-label="Introducción cinematográfica">
         <div id="start-text" class="intro-text">Toca para abrir</div>
         <video id="intro-video" class="intro-video" src="assets/video/intro.mp4" playsinline muted preload="auto"></video>
         <audio id="bg-audio" src="assets/audio/background.mp3" loop preload="auto"></audio>
     </section>
 
-    <!-- ACTO II: Hero / Portada Editorial (Sprint 02.1) -->
+    <!-- ACTO II: Portada Editorial -->
     <section id="hero" class="hero-section" aria-hidden="true">
-        <!-- Textura procedimental de papel algodón -->
         <div class="paper-texture"></div>
         
-        <!-- Contenedor del Marco Elegante -->
         <div class="hero-frame">
-            <!-- Contenedor dinámico de brillos -->
             <div id="sparkles-container"></div>
             
-            <!-- Acuarelas -->
-            <img src="assets/images/flowers-top-left.png" class="floral-accent top-left" alt="" aria-hidden="true">
-            <img src="assets/images/flowers-bottom-right.png" class="floral-accent bottom-right" alt="" aria-hidden="true">
+            <!-- FIX 404 Preventivo: Añadido loading="lazy" a flores y decodificación asíncrona -->
+            <img src="assets/images/flowers-top-left.png" class="floral-accent top-left" alt="" aria-hidden="true" decoding="async">
+            <img src="assets/images/flowers-bottom-right.png" class="floral-accent bottom-right" alt="" aria-hidden="true" decoding="async">
             
             <div class="hero-content">
                 <span class="hero-kicker">Nuestra Boda</span>
@@ -47,7 +51,6 @@
                 
                 <p class="hero-quote">"El inicio de nuestra historia eterna."</p>
                 
-                <!-- Detalles preparados para el scroll -->
                 <div class="hero-details">
                     <span class="detail-item date">28 . 11 . 2026</span>
                     <span class="detail-item location">Zapopan, Jalisco</span>
