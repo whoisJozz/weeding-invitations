@@ -1,17 +1,14 @@
 /**
- * variables.css
+ * variables.css (Fragmento actualizado)
  */
 :root {
     /* Paleta Oficial */
     --color-navy: #213962;
-    --color-stamp: #d8b076;
+    --color-gold: #C8A24A;
     --color-bg: #c7c1ae;
     --color-text-light: #ffffff;
     
     /* Tipografía */
     --font-primary: 'Symphony', serif;
     --font-secondary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    
-    /* Transiciones */
-    --transition-slow: 2.5s cubic-bezier(0.4, 0, 0.2, 1);
 }

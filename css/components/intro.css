@@ -1,40 +1,36 @@
 /**
- * intro.css
+ * intro.css (Fragmento actualizado)
  */
-.intro-section {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--color-bg); /* Fondo integrado, no negro */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-    cursor: pointer; /* Indica que toda la pantalla es interactiva */
-}
-
 .intro-text {
     position: absolute;
-    top: 32px;
-    left: 32px;
-    font-family: var(--font-secondary);
-    font-size: 0.85rem;
-    letter-spacing: 0.1em;
-    color: var(--color-navy);
-    z-index: 10;
+    /* Posicionamiento por encima del área central del sello */
+    top: 35vh; 
+    left: 50%;
+    transform: translateX(-50%);
+    
+    font-family: var(--font-primary);
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    color: var(--color-gold);
+    
+    text-align: center;
+    white-space: nowrap;
     pointer-events: none;
+    z-index: 10;
+    
+    /* Estado inicial para la animación de entrada */
+    opacity: 0; 
+    animation: textFadeIn 2s ease-out 0.5s forwards, 
+               textBreathe 4s ease-in-out 2.5s infinite alternate;
 }
 
-.intro-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Composición 9:16 adaptativa */
-    max-width: 100%;
-    max-height: 100vh;
+/* Fade de entrada suave */
+@keyframes textFadeIn {
+    from { opacity: 0; }
+    to { opacity: 0.85; }
+}
+
+/* Respiración sutil (oscilación de opacidad sin escalar) */
+@keyframes textBreathe {
+    from { opacity: 0.85; }
+    to { opacity: 0.4; }
 }
