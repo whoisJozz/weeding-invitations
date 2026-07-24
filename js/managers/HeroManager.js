@@ -1,6 +1,6 @@
 /**
  * HeroManager.js
- * Editorial Polish Final (RFC-008 & Sprint 02.3)
+ * Milestone M1: Tiempos reducidos, opacidad ajustada y Glint en el marco.
  */
 
 export default class HeroManager {
@@ -13,49 +13,93 @@ export default class HeroManager {
         this.quote = document.querySelector('.hero-quote');
         this.sparklesContainer = document.getElementById('sparkles-container');
         
+        // Elemento dinámico para el brillo del marco
+        this.frameGlint = document.createElement('div');
+        this.frameGlint.classList.add('frame-glint');
+        this.frame.appendChild(this.frameGlint);
+        
         this.activeSparkles = 0;
-        this.maxSparkles = 2; // Máximo 2 simultáneos (Sprint 02.3)
+        this.maxSparkles = 2; 
         this.sparkleTimer = null;
     }
 
     playEntrySequence() {
         const tl = gsap.timeline({
-            onComplete: () => this.initSparkleSystem()
+            onComplete: () => {
+                this.initSparkleSystem();
+                this.initFrameGlint();
+            }
         });
 
-        // Nivel 3: El Marco surge del silencio
-        tl.to(this.frame, { opacity: 1, duration: 2.5, ease: "power1.inOut" })
+        // Tiempos reducidos ~20%
+        // Marco: de 2.5s a 2s
+        tl.to(this.frame, { opacity: 1, duration: 2, ease: "power1.inOut" })
           
-          // Nivel 2: Las Flores (Acuarelas) entran muy lento (4 segs) hasta opacidad 0.22
-          .to(this.flowers, { opacity: 0.22, duration: 4, ease: "power1.inOut", stagger: 0.5 }, "-=1.5");
+          // Flores: de 4s a 3.2s | Opacidad: de 0.22 a 0.35
+          .to(this.flowers, { opacity: 0.35, duration: 3.2, ease: "power1.inOut", stagger: 0.4 }, "-=1.2");
 
-        // Nivel 1: El Contenido Principal
+        // Kicker: de 2s a 1.6s
         tl.fromTo(this.kicker, 
             { opacity: 0, y: 15 }, 
-            { opacity: 1, y: 0, duration: 2, ease: "power2.out" }, "-=2" // Inicia mientras pintan las flores
+            { opacity: 1, y: 0, duration: 1.6, ease: "power2.out" }, "-=1.6" 
         );
 
-        tl.fromTo(this.names[0], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 2.5, ease: "power2.out" }, "-=1.5")
-          .fromTo(this.ampersand, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 2.5, ease: "power2.out" }, "-=2")
-          .fromTo(this.names[1], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 2.5, ease: "power2.out" }, "-=2");
+        // Nombres y Ampersand: de 2.5s a 2s
+        tl.fromTo(this.names[0], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 2, ease: "power2.out" }, "-=1.2")
+          .fromTo(this.ampersand, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 2, ease: "power2.out" }, "-=1.6")
+          .fromTo(this.names[1], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 2, ease: "power2.out" }, "-=1.6");
 
+        // Frase final: de 2.5s a 2s
         tl.fromTo(this.quote, 
             { opacity: 0, y: 10 }, 
-            { opacity: 1, y: 0, duration: 2.5, ease: "power2.out" }, "-=1"
+            { opacity: 1, y: 0, duration: 2, ease: "power2.out" }, "-=1"
         );
     }
 
+    // --- Sistema de Brillo en el Marco (Glint) ---
+    initFrameGlint() {
+        this.scheduleNextGlint();
+    }
+
+    scheduleNextGlint() {
+        // Aparece aleatoriamente cada 8 a 12 segundos
+        const nextInterval = Math.random() * (12000 - 8000) + 8000;
+        
+        setTimeout(() => {
+            this.animateGlint();
+            this.scheduleNextGlint();
+        }, nextInterval);
+    }
+
+    animateGlint() {
+        // Prepara el brillo en el borde superior, oculto y desplazado hacia la izquierda
+        gsap.set(this.frameGlint, {
+            top: 0,
+            left: 0,
+            width: "150px",
+            height: "1px",
+            x: -150,
+            opacity: 0
+        });
+
+        // Recorre el marco de izquierda a derecha con un fade in/out suave
+        gsap.timeline()
+            .to(this.frameGlint, { opacity: 1, duration: 0.5, ease: "power2.in" })
+            .to(this.frameGlint, { x: this.frame.offsetWidth, duration: 3, ease: "none" }, "-=0.5")
+            .to(this.frameGlint, { opacity: 0, duration: 0.5, ease: "power2.out" }, "-=0.5");
+    }
+
+    // --- Sistema de Polvo Dorado ---
     initSparkleSystem() {
         this.scheduleNextSparkle();
     }
 
     scheduleNextSparkle() {
-        // Intervalo aleatorio entre 5000ms y 7000ms (5 - 7 segundos)
         const nextInterval = Math.random() * (7000 - 5000) + 5000;
         
         this.sparkleTimer = setTimeout(() => {
             this.spawnSparkle();
-            this.scheduleNextSparkle(); // Bucle recursivo orgánico
+            this.scheduleNextSparkle(); 
         }, nextInterval);
     }
 
@@ -67,7 +111,6 @@ export default class HeroManager {
         const sparkle = document.createElement('div');
         sparkle.classList.add('sparkle');
         
-        // Área segura dentro del marco (15% a 85%)
         const top = Math.random() * 70 + 15; 
         const left = Math.random() * 70 + 15;
         
@@ -76,7 +119,6 @@ export default class HeroManager {
         
         this.sparklesContainer.appendChild(sparkle);
 
-        // Animación etérea y apenas perceptible
         gsap.timeline({
             onComplete: () => {
                 sparkle.remove();

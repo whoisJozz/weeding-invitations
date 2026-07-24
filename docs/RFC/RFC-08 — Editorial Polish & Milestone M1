@@ -1,0 +1,64 @@
+RFC-08
+Editorial Polish & Milestone M1
+
+Objetivo
+
+Cerrar oficialmente la Landing Cinemática antes de comenzar el desarrollo narrativo de la invitación.
+
+Este RFC NO agrega funcionalidades nuevas.
+
+Únicamente pule tiempos, composición visual y percepción editorial.
+
+----------------------------------------
+
+Cambios
+
+1.
+Reducir tiempos de entrada del Hero aproximadamente un 20%.
+
+2.
+Reducir tiempo del fade del marco.
+
+3.
+Reducir tamaño de flores.
+
+4.
+Incrementar ligeramente su opacidad.
+
+5.
+Acercar la frase final hacia los nombres.
+
+6.
+Agregar un brillo ocasional recorriendo el marco.
+
+7.
+Agregar un fondo marfil con gradiente radial extremadamente sutil.
+
+8.
+No modificar la arquitectura.
+
+9.
+No modificar IntroManager.
+
+10.
+No modificar AudioManager.
+
+11.
+No modificar HeroManager salvo tiempos.
+
+----------------------------------------
+
+Resultado esperado
+
+El Hero debe sentirse como una portada editorial de revista de lujo.
+
+El usuario debe percibir elegancia sin notar las animaciones.
+
+Todo debe sentirse natural.
+
+Una vez aprobado este RFC se declara:
+
+Milestone M1
+"Cinematic Landing Complete"
+
+Y el proyecto entra oficialmente a la fase narrativa de la invitación.

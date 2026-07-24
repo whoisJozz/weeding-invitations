@@ -1,13 +1,13 @@
 /**
  * hero.css
- * Sprint 02.3: Editorial Final de Lujo. 
- * Basado en Vogue Weddings y minimalismo absoluto.
+ * Milestone M1: Editorial Final
  */
 .hero-section {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: var(--color-ivory); /* Fondo prístino, sin texturas */
+    /* FIX: Gradiente radial marfil extremadamente sutil para mayor profundidad */
+    background: radial-gradient(circle at center, var(--color-ivory) 0%, #E8E4D9 100%); 
     color: var(--color-navy);
     display: none; 
     justify-content: center;
@@ -15,49 +15,53 @@
     overflow: hidden;
     padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
     
-    /* Estado inicial para la transición cinematográfica de entrada */
     opacity: 0;
-    transform: scale(1.02); /* Muy sutil */
+    transform: scale(1.02);
     filter: blur(2px);
 }
 
 .hero-frame {
     position: relative;
-    width: calc(100% - 60px); /* Aumento sustancial de espacio negativo */
+    width: calc(100% - 60px); 
     height: calc(100% - 60px);
-    max-width: 1000px; /* Más estrecho para forzar una composición vertical elegante */
-    
-    /* Marco extremadamente refinado (riesgo sub-píxel mitigado en HDPI) */
+    max-width: 1000px; 
     border: 0.6px solid rgba(200, 162, 74, 0.25);
-    
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
     opacity: 0; 
+    overflow: hidden; /* Necesario para que el brillo del marco no se salga de los bordes */
 }
 
-/* Acuarelas Oficiales (Nivel 2 de Jerarquía Visual) */
+/* Elemento animado para el brillo ocasional del marco */
+.frame-glint {
+    position: absolute;
+    background: linear-gradient(90deg, transparent, rgba(200, 162, 74, 0.8), transparent);
+    pointer-events: none;
+    opacity: 0;
+    z-index: 15;
+}
+
 .floral-accent {
     position: absolute;
-    width: 48vmin;
-    max-width: 380px;
-    opacity: 0; /* Controlado por GSAP (0 -> 0.22) */
+    /* FIX: Reducción de tamaño de las flores para mayor sutileza */
+    width: 35vmin; 
+    max-width: 280px; 
+    opacity: 0; 
     pointer-events: none;
-    mix-blend-mode: multiply; /* Integración orgánica en el papel */
-    /* Sin sombras y sin rotaciones */
+    mix-blend-mode: multiply; 
 }
-/* Sobresalen ligeramente del marco para generar profundidad visual */
 .floral-accent.top-left { top: -8%; left: -8%; }
 .floral-accent.bottom-right { bottom: -8%; right: -8%; }
 
-/* Contenido Principal (Nivel 1 de Jerarquía Visual) */
 .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 4.5rem; /* Respiración absoluta, muchísimo aire */
+    /* FIX: Reducción del gap general para cohesionar el bloque de texto */
+    gap: 3.5rem; 
     z-index: 10;
 }
 
@@ -82,7 +86,7 @@
     font-size: clamp(3.8rem, 10vw, 8rem);
     color: var(--color-navy);
     line-height: 1.2; 
-    padding-bottom: 0.1em; /* Fix Safari */
+    padding-bottom: 0.1em; 
     opacity: 0;
 }
 
@@ -100,17 +104,18 @@
     font-size: 1.05rem;
     letter-spacing: 0.08em;
     color: var(--color-taupe);
+    /* FIX: Acercar la frase específicamente hacia los nombres */
+    margin-top: -1.5rem; 
     opacity: 0;
 }
 
-/* Nivel 4: Sistema de Polvo Dorado */
 .sparkle {
     position: absolute;
     width: 5px;
     height: 5px;
     background-color: transparent;
     border-radius: 50%;
-    box-shadow: 0 0 18px 5px rgba(200, 162, 74, 0.25); /* Ultra sutil */
+    box-shadow: 0 0 18px 5px rgba(200, 162, 74, 0.25);
     filter: blur(2px);
     pointer-events: none;
     opacity: 0;
