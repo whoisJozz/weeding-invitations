@@ -1,22 +1,20 @@
 /**
  * hero.css
+ * Modificado para soportar el efecto de emersión física (Objetivo 6).
  */
 .hero-section {
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-color: var(--color-bg);
+    background-color: var(--color-bg, #c7c1ae);
     color: var(--color-navy);
     display: none;
     justify-content: center;
     align-items: center;
     text-align: center;
+    
+    /* Estado inicial para la transición cinematográfica */
     opacity: 0;
-}
-
-.hero-title {
-    font-family: var(--font-primary);
-    font-size: clamp(4rem, 10vw, 8rem);
-    font-weight: normal;
-    color: var(--color-navy);
+    transform: scale(1.03);
+    filter: blur(4px);
 }
