@@ -1,11 +1,9 @@
 /**
  * main.js
- * Archivo principal de la experiencia.
- * Inicializa el smooth scroll y orquesta la introducción.
  */
-
 import IntroManager from './managers/IntroManager.js';
 import AudioManager from './managers/AudioManager.js';
+import HeroManager from './managers/HeroManager.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Inicialización de Lenis (Smooth Scroll)
@@ -21,13 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     requestAnimationFrame(raf);
 
-    // 2. Inicialización de la Primera Impresión
+    // 2. Inicialización de Managers
     const audioManager = new AudioManager();
     new IntroManager(audioManager);
+    const heroManager = new HeroManager();
 
-    // 3. Escucha de Eventos Globales
+    // 3. Transición del Acto I al Acto II
     window.addEventListener('intro:completed', () => {
-        // Espacio reservado para habilitar lógicas de scroll 
-        // y módulos de los siguientes Sprints.
+        heroManager.playEntrySequence();
     });
 });

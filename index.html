@@ -2,7 +2,6 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <!-- Restricción estricta de zoom para mantener la inmersión cinematográfica -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>A&Y Experience</title>
     
@@ -16,15 +15,44 @@
     <script type="module" src="js/main.js" defer></script>
 </head>
 <body>
+    <!-- ACTO I: Experiencia de Introducción (Sprint 01.5 + QA) -->
     <section id="intro" class="intro-section" aria-label="Introducción cinematográfica">
         <div id="start-text" class="intro-text">Toca para abrir</div>
         <video id="intro-video" class="intro-video" src="assets/video/intro.mp4" playsinline muted preload="auto"></video>
         <audio id="bg-audio" src="assets/audio/background.mp3" loop preload="auto"></audio>
     </section>
 
+    <!-- ACTO II: Hero / Portada Editorial (Sprint 02.1) -->
     <section id="hero" class="hero-section" aria-hidden="true">
-        <div class="hero-content">
-            <h1 class="hero-title">A & Y</h1>
+        <!-- Textura procedimental de papel algodón -->
+        <div class="paper-texture"></div>
+        
+        <!-- Contenedor del Marco Elegante -->
+        <div class="hero-frame">
+            <!-- Contenedor dinámico de brillos -->
+            <div id="sparkles-container"></div>
+            
+            <!-- Acuarelas -->
+            <img src="assets/images/flowers-top-left.png" class="floral-accent top-left" alt="" aria-hidden="true">
+            <img src="assets/images/flowers-bottom-right.png" class="floral-accent bottom-right" alt="" aria-hidden="true">
+            
+            <div class="hero-content">
+                <span class="hero-kicker">Nuestra Boda</span>
+                
+                <h1 class="hero-title">
+                    <span class="name">Andrew Zarate</span>
+                    <span class="ampersand">&</span>
+                    <span class="name">Yahtzyri Lugo</span>
+                </h1>
+                
+                <p class="hero-quote">"El inicio de nuestra historia eterna."</p>
+                
+                <!-- Detalles preparados para el scroll -->
+                <div class="hero-details">
+                    <span class="detail-item date">28 . 11 . 2026</span>
+                    <span class="detail-item location">Zapopan, Jalisco</span>
+                </div>
+            </div>
         </div>
     </section>
 </body>

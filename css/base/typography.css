@@ -1,7 +1,7 @@
 /**
  * typography.css
- * Asegura la carga correcta de la tipografía principal del proyecto.
  */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
 
 @font-face {
     font-family: 'Symphony';
@@ -10,5 +10,12 @@
          url('../../assets/fonts/Symphony.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: block; /* Evita destellos de fuentes fallback */
+    font-display: block; 
+}
+
+@font-face {
+    font-family: 'Glacial Indifference';
+    src: url('../../assets/fonts/GlacialIndifference-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-display: swap;
 }

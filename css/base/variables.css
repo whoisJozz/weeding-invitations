@@ -1,14 +1,19 @@
 /**
- * variables.css (Fragmento actualizado)
+ * variables.css
  */
 :root {
-    /* Paleta Oficial */
+    /* Paleta Editorial Oficial */
     --color-navy: #213962;
-    --color-gold: #C8A24A;
-    --color-bg: #c7c1ae;
-    --color-text-light: #ffffff;
+    --color-gold: #d8b076;
+    --color-ivory: #F3F0EA;
+    --color-sand: #c7c1ae;
+    --color-taupe: #9F8F76;
     
     /* Tipografía */
     --font-primary: 'Symphony', serif;
-    --font-secondary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-secondary: 'Montserrat', sans-serif;
+    --font-tertiary: 'Glacial Indifference', sans-serif;
+    
+    /* Transiciones */
+    --transition-slow: 2.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
