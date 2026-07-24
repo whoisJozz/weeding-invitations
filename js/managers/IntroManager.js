@@ -1,6 +1,6 @@
 /**
  * IntroManager.js
- * Orquestación milimétrica y cinematográfica.
+ * Fixes: Compatibilidad de eventos en iOS y forzado de primer frame.
  */
 
 export default class IntroManager {
@@ -13,7 +13,7 @@ export default class IntroManager {
         this.audioManager = audioManager;
         this.isTransitioning = false;
         this.breathingAnim = null;
-        this.rafId = null; // Para el monitoreo de alta precisión
+        this.rafId = null;
 
         this.init();
     }
@@ -21,17 +21,27 @@ export default class IntroManager {
     init() {
         if (!this.introSection || !this.video || !this.heroSection) return;
 
-        this.introSection.addEventListener('pointerdown', () => this.handleUserInteraction(), { once: true });
+        // FIX iOS: Cambiamos 'pointerdown' por 'click' para garantizar que iOS dispare el evento
+        this.introSection.addEventListener('click', () => this.handleUserInteraction(), { once: true });
         
-        // La secuencia inicia mostrando el primer frame del video inmediatamente
+        // FIX iOS: Forzamos la carga del primer frame del video en Safari
+        this.forceIOSFrameRender();
+        
         this.playOpeningSequence();
     }
 
+    forceIOSFrameRender() {
+        // Empujón para Safari: obligamos al navegador a buscar el primer milisegundo del video
+        this.video.addEventListener('loadedmetadata', () => {
+            this.video.currentTime = 0.1;
+        }, { once: true });
+    }
+
     playOpeningSequence() {
-        // Silencio visual. El texto aparece integrado a la composición.
         gsap.to(this.startText, {
-            opacity: 0.85, // No llega a 1 para sentirse afectado por la luz del video
-            filter: "blur(0px)",
+            opacity: 0.85, 
+            /* Se mantiene el drop-shadow y se quita el blur animado */
+            filter: "drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.4)) blur(0px)",
             duration: 0.6,
             delay: 0.8,
             ease: "power2.out",
@@ -41,9 +51,9 @@ export default class IntroManager {
 
     startBreathingAnimation() {
         this.breathingAnim = gsap.to(this.startText, {
-            scale: 1.01, // Aún más sutil
+            scale: 1.01,
             opacity: 0.65,
-            duration: 3.5, // Más pausado
+            duration: 3.5,
             repeat: -1,
             yoyo: true,
             ease: "sine.inOut"
@@ -56,13 +66,14 @@ export default class IntroManager {
 
         gsap.to(this.startText, {
             opacity: 0,
-            filter: "blur(8px)",
+            /* Salida con blur y drop-shadow */
+            filter: "drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.4)) blur(8px)",
             duration: 0.3,
             ease: "power2.inOut",
             onComplete: () => {
                 setTimeout(() => {
                     this.startVideoPlayback();
-                }, 250); // Pausa de 250ms (Objetivo 4)
+                }, 250);
             }
         });
     }
@@ -73,7 +84,6 @@ export default class IntroManager {
         
         if (playPromise !== undefined) {
             playPromise.then(() => {
-                // Iniciamos monitoreo a 60fps en lugar del evento torpe timeupdate
                 this.trackVideoProgress();
             }).catch(() => this.forceTransition());
         }
@@ -84,13 +94,11 @@ export default class IntroManager {
         
         const timeRemaining = this.video.duration - this.video.currentTime;
         
-        // Corte milimétrico a los 700ms (Objetivo 5)
         if (timeRemaining <= 0.7) {
             this.isTransitioning = true;
             this.audioManager.fadeIn(); 
             this.transitionToHero();
         } else {
-            // Continúa monitoreando en el siguiente frame
             this.rafId = requestAnimationFrame(() => this.trackVideoProgress());
         }
     }
@@ -116,14 +124,11 @@ export default class IntroManager {
             }
         });
 
-        // El video se desvanece por completo garantizando que el usuario 
-        // nunca vea el último frame congelado (Objetivo 5).
         tl.to(this.introSection, {
             opacity: 0,
-            duration: 0.7, // Sincronizado exactamente con el tiempo restante del video
-            ease: "none" // Transición lineal para fundirse con la velocidad real del video
+            duration: 0.7,
+            ease: "none"
         })
-        // El Hero emerge (Objetivo 6)
         .to(this.heroSection, { 
             opacity: 1, 
             scale: 1,

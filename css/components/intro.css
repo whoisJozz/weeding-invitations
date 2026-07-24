@@ -1,6 +1,6 @@
 /**
  * intro.css
- * La experiencia inicia sin fondos artificiales. El video es el lienzo.
+ * Fixes: Posicionamiento, degradado, destello azul y fondo de respaldo.
  */
 
 .intro-section {
@@ -9,35 +9,43 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    /* ELIMINADO: background-color para evitar UX-001 y UX-002 */
+    /* FIX iOS: Si el video tarda un milisegundo en cargar, muestra negro, nunca beige */
+    background-color: #0a0a0a; 
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 100;
     cursor: pointer;
-    touch-action: none; 
+    touch-action: none;
+    /* FIX Android: Elimina el destello azul al tocar la pantalla */
+    -webkit-tap-highlight-color: transparent; 
 }
 
 .intro-text {
     position: absolute;
-    top: 35vh; 
+    /* FIX Android: Subimos el texto para que no pise el sello */
+    top: 20vh; 
     left: 50%;
     transform: translateX(-50%);
     
     font-family: 'Symphony', serif;
     font-size: clamp(3rem, 10vw, 5rem);
-    color: #C8A24A; 
     
-    /* Integración visual (UX-003): Ligero resplandor para asentar el texto en la iluminación del video */
-    text-shadow: 0 0 20px rgba(200, 162, 74, 0.15);
+    /* FIX Android: Degradado dorado elegante sobre el texto */
+    background: linear-gradient(135deg, #E6C887 0%, #C8A24A 50%, #9B782E 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #C8A24A; /* Fallback de seguridad */
     
     text-align: center;
     white-space: nowrap;
     pointer-events: none;
     z-index: 10;
     
+    /* FIX Android: Sombra externa fuerte para separarlo del video */
+    /* Nota: filter agrupa la opacidad, el blur de entrada y el drop-shadow */
     opacity: 0;
-    filter: blur(8px);
+    filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.4)) blur(8px);
 }
 
 .intro-video {
@@ -53,6 +61,5 @@
     z-index: 1;
     max-width: 100%;
     max-height: 100vh;
-    /* Garantizamos que el video sea 100% opaco desde el primer paint */
     opacity: 1; 
 }
