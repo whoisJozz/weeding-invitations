@@ -1,0 +1,22 @@
+/**
+ * hero.css
+ */
+.hero-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-bg);
+    color: var(--color-navy);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+}
+
+.hero-title {
+    font-family: var(--font-primary);
+    font-size: clamp(4rem, 10vw, 8rem);
+    font-weight: normal;
+    color: var(--color-navy);
+}
