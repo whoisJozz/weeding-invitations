@@ -1,11 +1,14 @@
 /**
  * typography.css
+ * Asegura la carga correcta de la tipografía principal del proyecto.
  */
+
 @font-face {
     font-family: 'Symphony';
     src: url('../../assets/fonts/Symphony.woff2') format('woff2'),
-         url('../../assets/fonts/Symphony.woff') format('woff');
+         url('../../assets/fonts/Symphony.woff') format('woff'),
+         url('../../assets/fonts/Symphony.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-    font-display: block;
+    font-display: block; /* Evita destellos de fuentes fallback */
 }
