@@ -1,17 +1,14 @@
 /**
  * hero.css
- * Premium Motion & Asset Polish
+ * Optimizaciones de Rendimiento y Aceleración por Hardware (Sprint 02.5)
  */
 .hero-section {
     position: relative;
     width: 100vw;
     height: 100vh;
-    
-    /* Fondo editorial Premium: radial-gradient + linear-gradient */
     background: 
         radial-gradient(circle at 50% 50%, var(--color-ivory) 0%, #E8E4D9 80%),
         linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(232,228,217,0.1) 100%);
-    
     color: var(--color-navy);
     display: none; 
     justify-content: center;
@@ -22,6 +19,9 @@
     opacity: 0;
     transform: scale(1.02);
     filter: blur(2px);
+    
+    /* FIX SPRINT 02.5: GPU Acceleration base */
+    will-change: opacity, filter, transform;
 }
 
 .hero-frame {
@@ -36,6 +36,9 @@
     z-index: 2;
     opacity: 0; 
     overflow: hidden; 
+    
+    /* FIX SPRINT 02.5: GPU Acceleration */
+    will-change: opacity;
 }
 
 .frame-glint {
@@ -44,6 +47,7 @@
     pointer-events: none;
     opacity: 0;
     z-index: 15;
+    will-change: transform, opacity;
 }
 
 .floral-accent {
@@ -51,6 +55,7 @@
     opacity: 0; 
     pointer-events: none;
     mix-blend-mode: multiply; 
+    will-change: opacity;
 }
 
 .floral-accent.top-left { 
@@ -74,6 +79,11 @@
     text-align: center;
     gap: 3.5rem; 
     z-index: 10;
+}
+
+.hero-kicker, .hero-quote, .hero-title .name, .hero-title .ampersand {
+    /* FIX SPRINT 02.5: Asegurar fluidez tipográfica previniendo recálculos de CPU */
+    will-change: opacity, transform, filter;
 }
 
 .hero-kicker {
@@ -129,4 +139,5 @@
     filter: blur(2px);
     pointer-events: none;
     opacity: 0;
+    will-change: transform, opacity;
 }

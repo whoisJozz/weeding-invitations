@@ -1,0 +1,132 @@
+# RFC-008
+## Editorial Polish & Asset Pipeline
+
+Autor: UX / Creative Direction
+Estado: Approved
+Prioridad: Alta
+
+---
+
+## Objetivo
+
+Finalizar la primera impresión visual de la invitación eliminando tiempos muertos,
+corrigiendo la carga de recursos gráficos y sincronizando completamente la transición
+entre Intro y Hero.
+
+El objetivo ya no es agregar funcionalidades.
+
+El objetivo ahora es que toda la experiencia se perciba como una sola pieza cinematográfica.
+
+---
+
+## Problemas detectados
+
+### 1.
+
+Las flores SVG no cargan.
+
+Existe un error 404.
+
+No continuar modificando tamaños ni opacidades hasta solucionar completamente
+el pipeline de assets.
+
+---
+
+### 2.
+
+El fondo de papel no aparece.
+
+Debe verificarse igualmente la ruta del recurso.
+
+---
+
+### 3.
+
+El marco tarda demasiado en dibujarse.
+
+Visualmente provoca un tiempo muerto.
+
+---
+
+### 4.
+
+Las flores aparecen demasiado tarde.
+
+Actualmente parecen un elemento independiente.
+
+Queremos que formen parte del nacimiento del Hero.
+
+---
+
+### 5.
+
+Existen pequeños espacios vacíos entre:
+
+Fin del video
+↓
+
+Inicio Hero
+
+Estos espacios deben desaparecer completamente.
+
+---
+
+## Nuevo principio visual
+
+Todo el Hero debe sentirse como si estuviera "despertando".
+
+Nunca como elementos separados.
+
+El usuario jamás debe pensar:
+
+"ahora apareció el marco"
+
+Debe sentir:
+
+"la invitación está apareciendo."
+
+---
+
+## Objetivos técnicos
+
+✔ Corregir rutas SVG
+
+✔ Corregir rutas del background
+
+✔ Optimizar precarga de imágenes
+
+✔ Reducir tiempos de animación
+
+✔ Eliminar tiempos muertos
+
+✔ Revisar carga de assets en Vercel
+
+✔ Validar Desktop
+
+✔ Validar Android
+
+✔ Validar Safari iOS
+
+---
+
+## No modificar
+
+No alterar:
+
+• Paleta
+
+• Tipografías
+
+• Espaciados editoriales
+
+• Composición
+
+Todo el trabajo será únicamente de optimización.
+
+---
+
+## Resultado esperado
+
+La experiencia debe sentirse como una pieza editorial premium.
+
+No como una página web.

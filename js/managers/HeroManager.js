@@ -1,6 +1,6 @@
 /**
  * HeroManager.js
- * Animación Editorial Completa (Flores al 35%, Brillos controlados)
+ * Sincronización ininterrumpida y reducción de tiempos muertos (Sprint 02.5).
  */
 
 export default class HeroManager {
@@ -30,21 +30,28 @@ export default class HeroManager {
             }
         });
 
-        tl.to(this.frame, { opacity: 1, duration: 2, ease: "power1.inOut" })
-          .to(this.flowers, { opacity: 0.35, duration: 3.2, ease: "power1.inOut", stagger: 0.4 }, "-=1.2");
+        // Tiempos Absolutos para garantizar 0 tiempos muertos
+        // El marco inicia en el segundo 0 y dura 0.8s.
+        tl.to(this.frame, { opacity: 1, duration: 0.8, ease: "power2.out" }, 0);
+          
+        // Las flores inician exactamente a los 300ms (0.3) y entran como tinta lenta
+        tl.to(this.flowers, { opacity: 0.35, duration: 3.5, ease: "power1.inOut", stagger: 0.2 }, 0.3);
 
+        // Kicker despierta junto con el asentamiento del marco
         tl.fromTo(this.kicker, 
             { opacity: 0, y: 15 }, 
-            { opacity: 1, y: 0, duration: 1.6, ease: "power2.out" }, "-=1.6" 
+            { opacity: 1, y: 0, duration: 1.5, ease: "power2.out" }, 0.6
         );
 
-        tl.fromTo(this.names[0], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 2, ease: "power2.out" }, "-=1.2")
-          .fromTo(this.ampersand, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 2, ease: "power2.out" }, "-=1.6")
-          .fromTo(this.names[1], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 2, ease: "power2.out" }, "-=1.6");
+        // Nombres emergen orgánicamente 
+        tl.fromTo(this.names[0], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 2, ease: "power2.out" }, 0.9);
+        tl.fromTo(this.ampersand, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 2, ease: "power2.out" }, 1.1);
+        tl.fromTo(this.names[1], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 2, ease: "power2.out" }, 1.3);
 
+        // La frase cierra la secuencia
         tl.fromTo(this.quote, 
             { opacity: 0, y: 10 }, 
-            { opacity: 1, y: 0, duration: 2, ease: "power2.out" }, "-=1"
+            { opacity: 1, y: 0, duration: 2, ease: "power2.out" }, 1.6
         );
     }
 
