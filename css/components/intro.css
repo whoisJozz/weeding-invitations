@@ -1,6 +1,5 @@
 /**
  * intro.css
- * Recovery: Sin fondos oscuros que tapen el primer frame del video.
  */
 .intro-section {
     position: fixed;
@@ -8,7 +7,7 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: transparent; /* TASK 02: Nunca sobre un fondo negro */
+    background-color: transparent; /* TASK 04: Transparente siempre, el video es la base */
     display: flex;
     justify-content: center;
     align-items: center;

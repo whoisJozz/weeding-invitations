@@ -1,8 +1,6 @@
 /**
  * HeroManager.js
- * Recovery: Animaciones más ágiles y opacidades ajustadas.
  */
-
 export default class HeroManager {
     constructor() {
         this.frame = document.querySelector('.hero-frame');
@@ -30,10 +28,9 @@ export default class HeroManager {
             }
         });
 
-        // TASK 03: Animación del marco rápida y elegante (0.8s)
+        // TASK 01: Marco dibujado en exactamente 0.8s
         tl.to(this.frame, { opacity: 1, duration: 0.8, ease: "power2.out" }, 0);
           
-        // TASK 05: Flores con opacidad en el rango 20-30% (Fijado a 0.25)
         tl.to(this.flowers, { opacity: 0.25, duration: 3.5, ease: "power1.inOut", stagger: 0.2 }, 0.2);
 
         tl.fromTo(this.kicker, 

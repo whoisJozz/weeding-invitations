@@ -1,6 +1,6 @@
 /**
  * main.css 
- * Archivo base y configuración del papel editorial (Sprint 03.0 Recovery)
+ * Archivo base y configuración del papel editorial
  */
 @import url('base/variables.css');
 @import url('components/intro.css');
@@ -24,7 +24,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* TASK 06: Fondo editorial ultra-ligero de algodón */
+/* TASK 03: Fondo editorial CSS ultra-ligero y seguro para WebKit iOS */
 .editorial-background {
     position: fixed;
     top: 0;

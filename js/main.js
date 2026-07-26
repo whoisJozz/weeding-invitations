@@ -1,6 +1,5 @@
 /**
  * main.js
- * Recovery Base: Inicializa Intro y Hero sin llamadas a la historia.
  */
 import IntroManager from './managers/IntroManager.js';
 import AudioManager from './managers/AudioManager.js';
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     requestAnimationFrame(raf);
 
-    // Mantenemos el scroll bloqueado en el Hero por ahora
     lenis.stop();
     document.body.style.overflowY = 'hidden'; 
 

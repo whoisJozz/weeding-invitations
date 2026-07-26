@@ -10,7 +10,7 @@
     
     <link rel="preload" href="assets/fonts/Symphony.woff2" as="font" type="font/woff2" crossorigin>
     
-    <!-- FIX SPRINT 03.0: Precarga correcta de rutas en subcarpeta floral/ -->
+    <!-- FIX SPRINT 03.1: Rutas web relativas precisas para los assets florales -->
     <link rel="preload" href="assets/images/floral/flowers-top-left.svg" as="image" type="image/svg+xml">
     <link rel="preload" href="assets/images/floral/flowers-bottom-right.svg" as="image" type="image/svg+xml">
     
@@ -24,7 +24,7 @@
     <script type="module" src="js/main.js" defer></script>
 </head>
 <body style="overflow-y: hidden;">
-    <!-- Parche Editorial Global (TASK 06) -->
+    <!-- Parche Editorial Global (TASK 03) -->
     <div class="editorial-background" aria-hidden="true"></div>
 
     <section id="intro" class="intro-section" aria-label="Introducción cinematográfica">
@@ -37,7 +37,6 @@
         <div class="hero-frame">
             <div id="sparkles-container"></div>
             
-            <!-- FIX SPRINT 03.0: Rutas exactas a carpeta floral/ -->
             <img src="assets/images/floral/flowers-top-left.svg" class="floral-accent top-left" alt="" aria-hidden="true" decoding="async">
             <img src="assets/images/floral/flowers-bottom-right.svg" class="floral-accent bottom-right" alt="" aria-hidden="true" decoding="async">
             

@@ -1,8 +1,6 @@
 /**
  * IntroManager.js
- * Recovery: Sincronización ininterrumpida y soporte Safe/iOS.
  */
-
 export default class IntroManager {
     constructor(audioManager) {
         this.introSection = document.getElementById('intro');
@@ -87,7 +85,7 @@ export default class IntroManager {
         
         const timeRemaining = this.video.duration - this.video.currentTime;
         
-        // TASK 07: Corte adelantado exacto a los 0.45s para no permitir "dead time"
+        // TASK 05: Sincronización continua de video y Hero
         if (timeRemaining <= 0.45) {
             this.isTransitioning = true;
             this.audioManager.fadeIn(); 
