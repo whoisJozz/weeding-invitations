@@ -1,4 +1,4 @@
-\/**
+/**
  * IntroManager.js
  * Recovery: Sincronización ininterrumpida y soporte Safe/iOS.
  */
