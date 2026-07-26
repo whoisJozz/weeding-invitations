@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
     <title>A&Y | Nuestra Boda </title>
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>">
     
-    <!-- FIX SPRINT 02.5: Precarga de tipografía crítica -->
     <link rel="preload" href="assets/fonts/Symphony.woff2" as="font" type="font/woff2" crossorigin>
     
-    <!-- FIX SPRINT 02.5: Precarga de SVG para garantizar existencia en memoria antes del Hero -->
-    <link rel="preload" href="assets/images/flowers-top-left.svg" as="image" type="image/svg+xml">
-    <link rel="preload" href="assets/images/flowers-bottom-right.svg" as="image" type="image/svg+xml">
+    <!-- FIX SPRINT 03.0: Precarga correcta de rutas en subcarpeta floral/ -->
+    <link rel="preload" href="assets/images/floral/flowers-top-left.svg" as="image" type="image/svg+xml">
+    <link rel="preload" href="assets/images/floral/flowers-bottom-right.svg" as="image" type="image/svg+xml">
     
     <link rel="stylesheet" href="css/base/typography.css">
     <link rel="stylesheet" href="css/main.css">
@@ -23,22 +23,23 @@
     
     <script type="module" src="js/main.js" defer></script>
 </head>
-<body>
-    <!-- ACTO I: Experiencia de Introducción -->
+<body style="overflow-y: hidden;">
+    <!-- Parche Editorial Global (TASK 06) -->
+    <div class="editorial-background" aria-hidden="true"></div>
+
     <section id="intro" class="intro-section" aria-label="Introducción cinematográfica">
         <div id="start-text" class="intro-text">Toca para abrir</div>
         <video id="intro-video" class="intro-video" src="assets/video/intro.mp4" playsinline muted preload="auto"></video>
         <audio id="bg-audio" src="assets/audio/background.mp3" loop preload="auto"></audio>
     </section>
 
-    <!-- ACTO II: Portada Editorial Final -->
     <section id="hero" class="hero-section" aria-hidden="true">
         <div class="hero-frame">
             <div id="sparkles-container"></div>
             
-            <!-- FIX SPRINT 02.5: Rutas exactas sincronizadas con la precarga y extensión correcta (SVG) -->
-            <img src="assets/images/flowers-top-left.svg" class="floral-accent top-left" alt="" aria-hidden="true" decoding="async">
-            <img src="assets/images/flowers-bottom-right.svg" class="floral-accent bottom-right" alt="" aria-hidden="true" decoding="async">
+            <!-- FIX SPRINT 03.0: Rutas exactas a carpeta floral/ -->
+            <img src="assets/images/floral/flowers-top-left.svg" class="floral-accent top-left" alt="" aria-hidden="true" decoding="async">
+            <img src="assets/images/floral/flowers-bottom-right.svg" class="floral-accent bottom-right" alt="" aria-hidden="true" decoding="async">
             
             <div class="hero-content">
                 <span class="hero-kicker">Nuestra Boda</span>

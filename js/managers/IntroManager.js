@@ -1,6 +1,6 @@
-/**
+\/**
  * IntroManager.js
- * Sincronización ininterrumpida y soporte Safe/iOS.
+ * Recovery: Sincronización ininterrumpida y soporte Safe/iOS.
  */
 
 export default class IntroManager {
@@ -87,7 +87,7 @@ export default class IntroManager {
         
         const timeRemaining = this.video.duration - this.video.currentTime;
         
-        // Transición adelantada a los 0.45s
+        // TASK 07: Corte adelantado exacto a los 0.45s para no permitir "dead time"
         if (timeRemaining <= 0.45) {
             this.isTransitioning = true;
             this.audioManager.fadeIn(); 
@@ -118,7 +118,6 @@ export default class IntroManager {
             }
         });
 
-        // La salida del video dura los mismos 0.45s para no congelarse
         tl.to(this.introSection, {
             opacity: 0,
             duration: 0.45, 
