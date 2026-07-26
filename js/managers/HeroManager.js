@@ -1,6 +1,6 @@
 /**
  * HeroManager.js
- * Milestone M1: Tiempos reducidos, opacidad ajustada y Glint en el marco.
+ * Animación Editorial Completa (Flores al 35%, Brillos controlados)
  */
 
 export default class HeroManager {
@@ -13,7 +13,6 @@ export default class HeroManager {
         this.quote = document.querySelector('.hero-quote');
         this.sparklesContainer = document.getElementById('sparkles-container');
         
-        // Elemento dinámico para el brillo del marco
         this.frameGlint = document.createElement('div');
         this.frameGlint.classList.add('frame-glint');
         this.frame.appendChild(this.frameGlint);
@@ -31,38 +30,29 @@ export default class HeroManager {
             }
         });
 
-        // Tiempos reducidos ~20%
-        // Marco: de 2.5s a 2s
         tl.to(this.frame, { opacity: 1, duration: 2, ease: "power1.inOut" })
-          
-          // Flores: de 4s a 3.2s | Opacidad: de 0.22 a 0.35
           .to(this.flowers, { opacity: 0.35, duration: 3.2, ease: "power1.inOut", stagger: 0.4 }, "-=1.2");
 
-        // Kicker: de 2s a 1.6s
         tl.fromTo(this.kicker, 
             { opacity: 0, y: 15 }, 
             { opacity: 1, y: 0, duration: 1.6, ease: "power2.out" }, "-=1.6" 
         );
 
-        // Nombres y Ampersand: de 2.5s a 2s
         tl.fromTo(this.names[0], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 2, ease: "power2.out" }, "-=1.2")
           .fromTo(this.ampersand, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 2, ease: "power2.out" }, "-=1.6")
           .fromTo(this.names[1], { opacity: 0, filter: "blur(6px)" }, { opacity: 1, filter: "blur(0px)", duration: 2, ease: "power2.out" }, "-=1.6");
 
-        // Frase final: de 2.5s a 2s
         tl.fromTo(this.quote, 
             { opacity: 0, y: 10 }, 
             { opacity: 1, y: 0, duration: 2, ease: "power2.out" }, "-=1"
         );
     }
 
-    // --- Sistema de Brillo en el Marco (Glint) ---
     initFrameGlint() {
         this.scheduleNextGlint();
     }
 
     scheduleNextGlint() {
-        // Aparece aleatoriamente cada 8 a 12 segundos
         const nextInterval = Math.random() * (12000 - 8000) + 8000;
         
         setTimeout(() => {
@@ -72,7 +62,6 @@ export default class HeroManager {
     }
 
     animateGlint() {
-        // Prepara el brillo en el borde superior, oculto y desplazado hacia la izquierda
         gsap.set(this.frameGlint, {
             top: 0,
             left: 0,
@@ -82,14 +71,12 @@ export default class HeroManager {
             opacity: 0
         });
 
-        // Recorre el marco de izquierda a derecha con un fade in/out suave
         gsap.timeline()
             .to(this.frameGlint, { opacity: 1, duration: 0.5, ease: "power2.in" })
             .to(this.frameGlint, { x: this.frame.offsetWidth, duration: 3, ease: "none" }, "-=0.5")
             .to(this.frameGlint, { opacity: 0, duration: 0.5, ease: "power2.out" }, "-=0.5");
     }
 
-    // --- Sistema de Polvo Dorado ---
     initSparkleSystem() {
         this.scheduleNextSparkle();
     }

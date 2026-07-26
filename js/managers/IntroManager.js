@@ -1,6 +1,6 @@
 /**
  * IntroManager.js
- * Fixes: Compatibilidad de eventos en iOS y forzado de primer frame.
+ * Sincronización ininterrumpida y soporte Safe/iOS.
  */
 
 export default class IntroManager {
@@ -21,17 +21,12 @@ export default class IntroManager {
     init() {
         if (!this.introSection || !this.video || !this.heroSection) return;
 
-        // FIX iOS: Cambiamos 'pointerdown' por 'click' para garantizar que iOS dispare el evento
         this.introSection.addEventListener('click', () => this.handleUserInteraction(), { once: true });
-        
-        // FIX iOS: Forzamos la carga del primer frame del video en Safari
         this.forceIOSFrameRender();
-        
         this.playOpeningSequence();
     }
 
     forceIOSFrameRender() {
-        // Empujón para Safari: obligamos al navegador a buscar el primer milisegundo del video
         this.video.addEventListener('loadedmetadata', () => {
             this.video.currentTime = 0.1;
         }, { once: true });
@@ -40,7 +35,6 @@ export default class IntroManager {
     playOpeningSequence() {
         gsap.to(this.startText, {
             opacity: 0.85, 
-            /* Se mantiene el drop-shadow y se quita el blur animado */
             filter: "drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.4)) blur(0px)",
             duration: 0.6,
             delay: 0.8,
@@ -66,7 +60,6 @@ export default class IntroManager {
 
         gsap.to(this.startText, {
             opacity: 0,
-            /* Salida con blur y drop-shadow */
             filter: "drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.4)) blur(8px)",
             duration: 0.3,
             ease: "power2.inOut",
@@ -94,7 +87,8 @@ export default class IntroManager {
         
         const timeRemaining = this.video.duration - this.video.currentTime;
         
-        if (timeRemaining <= 0.7) {
+        // Transición adelantada a los 0.45s
+        if (timeRemaining <= 0.45) {
             this.isTransitioning = true;
             this.audioManager.fadeIn(); 
             this.transitionToHero();
@@ -124,9 +118,10 @@ export default class IntroManager {
             }
         });
 
+        // La salida del video dura los mismos 0.45s para no congelarse
         tl.to(this.introSection, {
             opacity: 0,
-            duration: 0.7,
+            duration: 0.45, 
             ease: "none"
         })
         .to(this.heroSection, { 
@@ -135,6 +130,6 @@ export default class IntroManager {
             filter: "blur(0px)",
             duration: 2.5, 
             ease: "power2.out" 
-        }, "-=0.7");
+        }, "-=0.45");
     }
 }

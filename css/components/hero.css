@@ -1,13 +1,17 @@
 /**
  * hero.css
- * Milestone M1: Editorial Final
+ * Premium Motion & Asset Polish
  */
 .hero-section {
     position: relative;
     width: 100vw;
     height: 100vh;
-    /* FIX: Gradiente radial marfil extremadamente sutil para mayor profundidad */
-    background: radial-gradient(circle at center, var(--color-ivory) 0%, #E8E4D9 100%); 
+    
+    /* Fondo editorial Premium: radial-gradient + linear-gradient */
+    background: 
+        radial-gradient(circle at 50% 50%, var(--color-ivory) 0%, #E8E4D9 80%),
+        linear-gradient(180deg, rgba(255,255,255,0.4) 0%, rgba(232,228,217,0.1) 100%);
+    
     color: var(--color-navy);
     display: none; 
     justify-content: center;
@@ -31,10 +35,9 @@
     align-items: center;
     z-index: 2;
     opacity: 0; 
-    overflow: hidden; /* Necesario para que el brillo del marco no se salga de los bordes */
+    overflow: hidden; 
 }
 
-/* Elemento animado para el brillo ocasional del marco */
 .frame-glint {
     position: absolute;
     background: linear-gradient(90deg, transparent, rgba(200, 162, 74, 0.8), transparent);
@@ -45,22 +48,30 @@
 
 .floral-accent {
     position: absolute;
-    /* FIX: Reducción de tamaño de las flores para mayor sutileza */
-    width: 35vmin; 
-    max-width: 280px; 
     opacity: 0; 
     pointer-events: none;
     mix-blend-mode: multiply; 
 }
-.floral-accent.top-left { top: -8%; left: -8%; }
-.floral-accent.bottom-right { bottom: -8%; right: -8%; }
+
+.floral-accent.top-left { 
+    top: -8%; 
+    left: -8%; 
+    width: 45vw;
+    max-width: 380px; 
+}
+
+.floral-accent.bottom-right { 
+    bottom: -8%; 
+    right: -8%; 
+    width: 40vw;
+    max-width: 340px; 
+}
 
 .hero-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    /* FIX: Reducción del gap general para cohesionar el bloque de texto */
     gap: 3.5rem; 
     z-index: 10;
 }
@@ -104,7 +115,6 @@
     font-size: 1.05rem;
     letter-spacing: 0.08em;
     color: var(--color-taupe);
-    /* FIX: Acercar la frase específicamente hacia los nombres */
     margin-top: -1.5rem; 
     opacity: 0;
 }
