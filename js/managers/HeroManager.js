@@ -31,8 +31,8 @@ export default class HeroManager {
         });
 
         // Tiempos Absolutos para garantizar 0 tiempos muertos
-        // El marco inicia en el segundo 0 y dura 0.8s.
-        tl.to(this.frame, { opacity: 1, duration: 0.8, ease: "power2.out" }, 0);
+        // El marco inicia en el segundo 0 y dura 0.5s.
+        tl.to(this.frame, { opacity: 1, duration: 0.5, ease: "power2.out" }, 0);
           
         // Las flores inician exactamente a los 300ms (0.3) y entran como tinta lenta
         tl.to(this.flowers, { opacity: 0.35, duration: 3.5, ease: "power1.inOut", stagger: 0.2 }, 0.3);

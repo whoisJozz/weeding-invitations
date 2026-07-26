@@ -1,0 +1,107 @@
+# RFC-009
+## Editorial Background & Foundation for Storytelling
+
+Autor: Creative Direction
+Estado: APPROVED
+
+---
+
+## Objetivo
+
+Antes de construir las siguientes escenas de la invitación,
+debe finalizarse el lenguaje visual definitivo del proyecto.
+
+Este RFC introduce el fondo editorial que servirá como base para TODA la experiencia.
+
+No debe existir una escena con un fondo distinto.
+
+Desde el Hero hasta el cierre,
+el usuario debe sentir que está leyendo una única pieza impresa.
+
+---
+
+# Problema actual
+
+Actualmente el Hero utiliza únicamente un color crema.
+
+Visualmente funciona.
+
+Pero aún no transmite la sensación de papel fino.
+
+El proyecto todavía luce digital.
+
+---
+
+# Nuevo principio visual
+
+No queremos un fondo.
+
+Queremos un soporte físico.
+
+Debe sentirse como algodón italiano,
+papel de algodón prensado,
+o una invitación premium impresa.
+
+Nunca como una textura evidente.
+
+Nunca como un wallpaper.
+
+---
+
+# Implementación
+
+Si la textura existe:
+
+utilizarla.
+
+Si la textura aún no existe:
+
+crear un parche temporal mediante CSS.
+
+No detener el desarrollo por este punto.
+
+---
+
+# Parche temporal
+
+Combinar:
+
+• color base
+
+• radial gradients
+
+• linear gradients
+
+• noise extremadamente sutil
+
+para simular fibras del papel.
+
+Este parche podrá reemplazarse posteriormente por una textura física.
+
+---
+
+# Restricciones
+
+NO usar imágenes de más de 300 KB.
+
+NO usar texturas repetitivas visibles.
+
+NO generar patrones.
+
+NO utilizar filtros exagerados.
+
+La textura únicamente debe percibirse.
+
+Nunca llamar la atención.
+
+---
+
+# Resultado esperado
+
+El usuario no debe pensar:
+
+"hay una textura"
+
+Debe pensar:
+
+"qué bonito se siente este fondo."

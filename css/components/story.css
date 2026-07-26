@@ -1,0 +1,46 @@
+/**
+ * story.css
+ * Acto II: Nuestra Historia (Sprint 03.0)
+ */
+.story-section {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 15vh 8vw;
+    z-index: 10;
+}
+
+.story-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 900px;
+}
+
+.story-title {
+    font-family: var(--font-secondary);
+    font-size: 0.85rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--color-taupe);
+    opacity: 0;
+    will-change: opacity, filter, transform;
+}
+
+.story-phrase, .story-subphrase {
+    font-family: var(--font-primary);
+    font-size: clamp(3rem, 7vw, 5rem);
+    line-height: 1.2;
+    color: var(--color-navy);
+    opacity: 0;
+    will-change: opacity, filter, transform;
+}
+
+.story-spacer {
+    height: 5vh; /* Pequeña pausa visual requerida en el Sprint 03.0 */
+}
