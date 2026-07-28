@@ -10,9 +10,9 @@
     
     <link rel="preload" href="assets/fonts/Symphony.woff2" as="font" type="font/woff2" crossorigin>
     
-    <!-- FIX: De vuelta a SVG para máximo rendimiento -->
-    <link rel="preload" href="assets/images/floral/flowers-top-left.svg" as="image" type="image/svg+xml">
-    <link rel="preload" href="assets/images/floral/flowers-bottom-right.svg" as="image" type="image/svg+xml">
+    <!-- FIX: Regresamos a PNG para mantener la máxima calidad tras los problemas de conversión -->
+    <link rel="preload" href="assets/images/floral/flowers-top-left.png" as="image" type="image/png">
+    <link rel="preload" href="assets/images/floral/flowers-bottom-right.png" as="image" type="image/png">
     
     <link rel="stylesheet" href="css/base/typography.css">
     <link rel="stylesheet" href="css/main.css">
@@ -24,25 +24,21 @@
     <script type="module" src="js/main.js" defer></script>
 </head>
 <body style="overflow-y: hidden;">
-    <!-- Parche Editorial Global (Fondo de papel continuo) -->
     <div class="editorial-background" aria-hidden="true"></div>
 
-    <!-- ACTO I: Intro Cinemática -->
     <section id="intro" class="intro-section" aria-label="Introducción cinematográfica">
         <div id="start-text" class="intro-text">Toca para abrir</div>
         <video id="intro-video" class="intro-video" src="assets/video/intro.mp4" playsinline muted preload="auto"></video>
         <audio id="bg-audio" src="assets/audio/background.mp3" loop preload="auto"></audio>
     </section>
 
-    <!-- ACTO I: Hero Editorial -->
     <section id="hero" class="hero-section" aria-hidden="true">
         <div class="hero-frame">
-            <!-- Contenedor estructural para los brillos -->
             <div id="sparkles-container"></div>
             
-            <!-- FIX: Rutas actualizadas a SVG -->
-            <img src="assets/images/floral/flowers-top-left.svg" class="floral-accent top-left" alt="" aria-hidden="true" decoding="async">
-            <img src="assets/images/floral/flowers-bottom-right.svg" class="floral-accent bottom-right" alt="" aria-hidden="true" decoding="async">
+            <!-- FIX: Rutas actualizadas a PNG -->
+            <img src="assets/images/floral/flowers-top-left.png" class="floral-accent top-left" alt="" aria-hidden="true" decoding="async">
+            <img src="assets/images/floral/flowers-bottom-right.png" class="floral-accent bottom-right" alt="" aria-hidden="true" decoding="async">
             
             <div class="hero-content">
                 <span class="hero-kicker">Nuestra Boda</span>
@@ -58,7 +54,6 @@
         </div>
     </section>
 
-    <!-- ACTO II: Nuestra Historia -->
     <section id="story" class="story-section">
         <div class="story-content">
             <p class="story-text">"Toda gran historia comienza con un <span class="highlight-gold">sí</span>."</p>
@@ -67,7 +62,6 @@
         </div>
     </section>
 
-    <!-- ACTO III & IV: Contenedores preparados -->
     <section id="fecha" class="hidden-section" aria-hidden="true"></section>
     <section id="contador" class="hidden-section" aria-hidden="true"></section>
     <section id="ceremonia" class="hidden-section" aria-hidden="true"></section>
