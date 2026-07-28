@@ -1,6 +1,6 @@
 /**
  * StoryManager.js
- * Sprint 04.0: Controla la transición cinematográfica entre el Hero y el Acto II.
+ * RFC-012: Editorial Storytelling Motion
  */
 
 export default class StoryManager {
@@ -14,7 +14,7 @@ export default class StoryManager {
     initScroll() {
         if (!this.heroContent) return;
 
-        // 1. Transición Cinemática: Fade Out suave del texto de la portada al scrollear
+        // Transición de salida del Hero (Se mantiene)
         gsap.to(this.heroContent, {
             opacity: 0,
             y: -50,
@@ -23,27 +23,32 @@ export default class StoryManager {
                 trigger: document.body,
                 start: "top top",
                 end: "400px top",
-                scrub: 1.5 // Suavizado para que se sienta fluido y continuo
+                scrub: 1.5 
             }
         });
 
-        // 2. Aparición Escalonada: Las frases de la historia emergen conforme se descubre la página
-        this.storyTexts.forEach((text) => {
+        // FIX: Tiempos editoriales definidos en RFC-012
+        const durations = [1.2, 1.5, 1.8];
+
+        this.storyTexts.forEach((text, index) => {
+            // Asigna el tiempo correspondiente o 1.8s por defecto
+            const duration = durations[index] || 1.8;
+
             gsap.fromTo(text,
                 { 
                     opacity: 0, 
-                    y: 40, 
-                    filter: "blur(8px)" 
+                    y: 50,               // Desplazamiento vertical pronunciado
+                    filter: "blur(12px)" // Blur cinemático profundo
                 },
                 {
                     opacity: 1,
                     y: 0,
                     filter: "blur(0px)",
-                    duration: 2.5,
-                    ease: "power2.out",
+                    duration: duration,
+                    ease: "power2.out",  // Easing suave y elegante
                     scrollTrigger: {
                         trigger: text,
-                        start: "top 75%", // Se activa cuando el elemento cruza el 75% inferior de la pantalla
+                        start: "top 80%", // El texto debe aparecer al ir siendo descubierto
                         toggleActions: "play none none reverse"
                     }
                 }

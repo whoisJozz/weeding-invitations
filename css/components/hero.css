@@ -2,10 +2,8 @@
  * hero.css
  */
 .hero-section {
-    /* MODIFICACIÓN CINEMÁTICA: Permite que el Hero se fije mientras se scrollea el Acto II */
     position: sticky;
     top: 0;
-    
     width: 100vw;
     height: 100vh;
     background: transparent; 
@@ -55,18 +53,20 @@
     filter: grayscale(15%);
 }
 
+/* FIX: Escala incrementada (de 50vw a 60vw) abrazando el papel */
 .floral-accent.top-left { 
-    top: -8%; 
-    left: -8%; 
-    width: 50vw;
-    max-width: 400px; 
+    top: -10%; 
+    left: -10%; 
+    width: 60vw;
+    max-width: 480px; 
 }
 
+/* FIX: Escala incrementada (de 45vw a 55vw) */
 .floral-accent.bottom-right { 
-    bottom: -8%; 
-    right: -8%; 
-    width: 45vw;
-    max-width: 360px; 
+    bottom: -10%; 
+    right: -10%; 
+    width: 55vw;
+    max-width: 420px; 
 }
 
 .hero-content {
