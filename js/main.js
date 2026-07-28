@@ -4,6 +4,7 @@
 import IntroManager from './managers/IntroManager.js';
 import AudioManager from './managers/AudioManager.js';
 import HeroManager from './managers/HeroManager.js';
+import StoryManager from './managers/StoryManager.js'; // Sprint 04.0
 
 document.addEventListener('DOMContentLoaded', () => {
     const lenis = new Lenis({
@@ -27,5 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.addEventListener('intro:completed', () => {
         heroManager.playEntrySequence();
+        
+        // Inicializar el controlador del Acto II
+        new StoryManager();
+
+        // Liberar el scroll de forma segura después de que el marco y las flores aparezcan
+        setTimeout(() => {
+            lenis.start();
+            document.body.style.overflowY = ''; 
+        }, 3000);
     });
 });

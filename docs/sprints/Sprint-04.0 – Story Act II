@@ -1,0 +1,95 @@
+# Sprint-04.0
+Story Act II
+
+Estado:
+READY
+
+---
+
+## Objetivo
+
+Construir la transición narrativa entre el Hero y la información del evento.
+
+No implementar todavía fecha, ceremonia o recepción.
+
+Este Sprint se centra únicamente en introducir emocionalmente al invitado en la historia.
+
+---
+
+## TASK 01
+
+Diseñar una transición cinematográfica desde el Hero hacia la narrativa.
+
+No utilizar cortes bruscos.
+
+Debe sentirse como una continuación del Hero.
+
+---
+
+## TASK 02
+
+Implementar una sección editorial denominada:
+
+Nuestra Historia
+
+Esta sección contendrá únicamente tres frases breves que aparecerán mediante animaciones suaves.
+
+El contenido definitivo será configurable posteriormente.
+
+Por ahora utilizar placeholders claramente identificados.
+
+---
+
+## TASK 03
+
+Mantener continuidad visual.
+
+El fondo editorial, las flores, el marco y la iluminación deben conservar coherencia con el Hero.
+
+---
+
+## TASK 04
+
+Preparar la estructura HTML y CSS para los siguientes actos sin implementar aún su contenido funcional.
+
+Crear únicamente los contenedores necesarios para:
+
+- Fecha
+- Contador
+- Ceremonia
+- Recepción
+- Dress Code
+- Mesa de Regalos
+- Padrinos
+- Confirmación
+
+Los contenedores deberán permanecer ocultos o vacíos hasta su Sprint correspondiente.
+
+---
+
+## TASK 05
+
+Developer Handover
+
+Al finalizar el Sprint entregar:
+
+- Archivos modificados.
+- Recursos utilizados.
+- Recursos pendientes.
+- Riesgos detectados.
+- Cambios realizados.
+- Validación de arquitectura.
+- Confirmación de ausencia de errores 404.
+- Auto QA Checklist.
+
+---
+
+## Recursos
+
+Antes de implementar ilustraciones, iconografía o cualquier nuevo asset, confirmar con el Product Owner su existencia y ubicación.
+
+---
+
+## Commit
+
+feat(story): implement cinematic Act II narrative transition

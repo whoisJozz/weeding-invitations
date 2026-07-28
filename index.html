@@ -9,8 +9,6 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>">
     
     <link rel="preload" href="assets/fonts/Symphony.woff2" as="font" type="font/woff2" crossorigin>
-    
-    <!-- FIX SPRINT 03.1: Rutas web relativas precisas para los assets florales -->
     <link rel="preload" href="assets/images/floral/flowers-top-left.svg" as="image" type="image/svg+xml">
     <link rel="preload" href="assets/images/floral/flowers-bottom-right.svg" as="image" type="image/svg+xml">
     
@@ -24,15 +22,17 @@
     <script type="module" src="js/main.js" defer></script>
 </head>
 <body style="overflow-y: hidden;">
-    <!-- Parche Editorial Global (TASK 03) -->
+    <!-- Parche Editorial Global (Fondo de papel continuo) -->
     <div class="editorial-background" aria-hidden="true"></div>
 
+    <!-- ACTO I: Intro Cinemática -->
     <section id="intro" class="intro-section" aria-label="Introducción cinematográfica">
         <div id="start-text" class="intro-text">Toca para abrir</div>
         <video id="intro-video" class="intro-video" src="assets/video/intro.mp4" playsinline muted preload="auto"></video>
         <audio id="bg-audio" src="assets/audio/background.mp3" loop preload="auto"></audio>
     </section>
 
+    <!-- ACTO I: Hero Editorial (Ahora con position: sticky) -->
     <section id="hero" class="hero-section" aria-hidden="true">
         <div class="hero-frame">
             <div id="sparkles-container"></div>
@@ -53,5 +53,27 @@
             </div>
         </div>
     </section>
+
+    <!-- ACTO II: Nuestra Historia (Sprint 04.0) -->
+    <section id="story" class="story-section">
+        <div class="story-content">
+            <!-- Placeholders claramente identificados -->
+            <p class="story-text">[PLACEHOLDER 1] "Toda gran historia comienza con un sí."</p>
+            <p class="story-text">[PLACEHOLDER 2] "Nuestros caminos se cruzaron de manera inesperada."</p>
+            <p class="story-text">[PLACEHOLDER 3] "Y desde ese instante, supimos que sería para siempre."</p>
+        </div>
+    </section>
+
+    <!-- ACTO III: Información del Evento (Sprint 04.0: Contenedores preparados) -->
+    <section id="fecha" class="hidden-section" aria-hidden="true"></section>
+    <section id="contador" class="hidden-section" aria-hidden="true"></section>
+    <section id="ceremonia" class="hidden-section" aria-hidden="true"></section>
+    <section id="recepcion" class="hidden-section" aria-hidden="true"></section>
+
+    <!-- ACTO IV: Confirmación & Detalles -->
+    <section id="dress-code" class="hidden-section" aria-hidden="true"></section>
+    <section id="mesa-regalos" class="hidden-section" aria-hidden="true"></section>
+    <section id="padrinos" class="hidden-section" aria-hidden="true"></section>
+    <section id="confirmacion" class="hidden-section" aria-hidden="true"></section>
 </body>
 </html>

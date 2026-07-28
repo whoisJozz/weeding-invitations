@@ -1,0 +1,78 @@
+# RFC-011
+# Storytelling Experience
+
+Estado:
+APPROVED
+
+---
+
+## Objetivo
+
+La invitación deja de comportarse como una página web y comienza a comportarse como una historia interactiva.
+
+Cada sección debe sentirse como la continuación natural de la anterior.
+
+Nunca como bloques independientes.
+
+---
+
+# Principios
+
+- Mantener continuidad visual.
+- No realizar cambios bruscos de color.
+- El marco editorial continúa acompañando la experiencia.
+- Las flores permanecen como parte del lenguaje visual.
+- El papel editorial permanece durante todo el recorrido.
+
+---
+
+# Narrativa
+
+ACTO I
+Intro Cinemática
+
+↓
+
+Hero Editorial
+
+↓
+
+ACTO II
+Nuestra Historia
+
+↓
+
+ACTO III
+Información del Evento
+
+↓
+
+ACTO IV
+Confirmación
+
+↓
+
+ACTO V
+Cierre
+
+---
+
+## Recursos
+
+Antes de implementar cualquier escena nueva, confirmar si se requieren:
+
+- ilustraciones
+- iconografía
+- fotografías
+- mapas
+- nuevos SVG
+- texturas
+- efectos visuales
+
+No asumir recursos.
+
+Solicitarlos previamente al Product Owner.
+
+---
+
+Este RFC tendrá prioridad para todos los siguientes sprints.
