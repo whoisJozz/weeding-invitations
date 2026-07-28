@@ -5,7 +5,7 @@ import IntroManager from './managers/IntroManager.js';
 import AudioManager from './managers/AudioManager.js';
 import HeroManager from './managers/HeroManager.js';
 import StoryManager from './managers/StoryManager.js';
-import Act3Manager from './managers/Act3Manager.js'; // Añadido Sprint 05.0
+import Act3Manager from './managers/Act3Manager.js'; // <- IMPORTANTE
 
 document.addEventListener('DOMContentLoaded', () => {
     const lenis = new Lenis({
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         heroManager.playEntrySequence();
         
         new StoryManager();
-        new Act3Manager(); // Inicializar Acto III
+        new Act3Manager(); // <- INICIALIZACIÓN
 
         setTimeout(() => {
             lenis.start();

@@ -1,8 +1,6 @@
 /**
  * Act3Manager.js
- * Sprint 05.0: Orquestación del Acto III (Fecha y Contador)
  */
-
 export default class Act3Manager {
     constructor() {
         this.dateSection = document.getElementById('fecha');
@@ -15,9 +13,12 @@ export default class Act3Manager {
     }
 
     initScroll() {
-        if (!this.dateSection || !this.countdownSection) return;
+        // Validación de seguridad por si el HTML no se actualizó correctamente
+        if (!this.dateSection || !this.countdownSection || this.dateElements.length === 0) {
+            console.warn("Act3Manager: Los elementos del Acto III no se encontraron en el DOM.");
+            return;
+        }
 
-        // 1. Animación de la Fecha (Stagger secuencial)
         gsap.fromTo(this.dateElements,
             { 
                 opacity: 0, 
@@ -29,7 +30,7 @@ export default class Act3Manager {
                 y: 0,
                 filter: "blur(0px)",
                 duration: 1.5,
-                stagger: 0.15, // Aparición en cascada muy elegante
+                stagger: 0.15, 
                 ease: "power2.out",
                 scrollTrigger: {
                     trigger: this.dateSection,
@@ -39,7 +40,6 @@ export default class Act3Manager {
             }
         );
 
-        // 2. Animación del Contador (Aparece en bloque)
         gsap.fromTo(this.countdownElements,
             { 
                 opacity: 0, 

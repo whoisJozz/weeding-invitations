@@ -5,7 +5,7 @@
 @import url('components/intro.css');
 @import url('components/hero.css');
 @import url('components/story.css');
-@import url('components/act3.css'); /* Añadido Sprint 05.0 */
+@import url('components/act3.css'); /* ESENCIAL PARA EL ACTO III */
 
 *, *::before, *::after {
     box-sizing: border-box;
