@@ -9,6 +9,8 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>">
     
     <link rel="preload" href="assets/fonts/Symphony.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- FIX: De vuelta a SVG para máximo rendimiento -->
     <link rel="preload" href="assets/images/floral/flowers-top-left.svg" as="image" type="image/svg+xml">
     <link rel="preload" href="assets/images/floral/flowers-bottom-right.svg" as="image" type="image/svg+xml">
     
@@ -35,8 +37,10 @@
     <!-- ACTO I: Hero Editorial -->
     <section id="hero" class="hero-section" aria-hidden="true">
         <div class="hero-frame">
+            <!-- Contenedor estructural para los brillos -->
             <div id="sparkles-container"></div>
             
+            <!-- FIX: Rutas actualizadas a SVG -->
             <img src="assets/images/floral/flowers-top-left.svg" class="floral-accent top-left" alt="" aria-hidden="true" decoding="async">
             <img src="assets/images/floral/flowers-bottom-right.svg" class="floral-accent bottom-right" alt="" aria-hidden="true" decoding="async">
             
@@ -54,7 +58,7 @@
         </div>
     </section>
 
-    <!-- ACTO II: Nuestra Historia (RFC-012 Editorial Motion) -->
+    <!-- ACTO II: Nuestra Historia -->
     <section id="story" class="story-section">
         <div class="story-content">
             <p class="story-text">"Toda gran historia comienza con un <span class="highlight-gold">sí</span>."</p>

@@ -16,7 +16,7 @@ export default class HeroManager {
         this.frame.appendChild(this.frameGlint);
         
         this.activeSparkles = 0;
-        this.maxSparkles = 2; 
+        this.maxSparkles = 4; // Aumentamos el límite de brillos a 4 simultáneos
         this.sparkleTimer = null;
     }
 
@@ -28,10 +28,10 @@ export default class HeroManager {
             }
         });
 
-        // TASK 01: Marco dibujado en exactamente 0.8s
         tl.to(this.frame, { opacity: 1, duration: 0.8, ease: "power2.out" }, 0);
           
-        tl.to(this.flowers, { opacity: 0.25, duration: 3.5, ease: "power1.inOut", stagger: 0.2 }, 0.2);
+        // FIX: Opacidad del 60% para que el SVG luzca vibrante pero fusionado con el fondo
+        tl.to(this.flowers, { opacity: 0.6, duration: 3.5, ease: "power1.inOut", stagger: 0.2 }, 0.2);
 
         tl.fromTo(this.kicker, 
             { opacity: 0, y: 15 }, 
@@ -82,7 +82,8 @@ export default class HeroManager {
     }
 
     scheduleNextSparkle() {
-        const nextInterval = Math.random() * (7000 - 5000) + 5000;
+        // Reducimos el intervalo para que aparezcan un poco más seguido
+        const nextInterval = Math.random() * (5000 - 3000) + 3000;
         
         this.sparkleTimer = setTimeout(() => {
             this.spawnSparkle();
@@ -112,7 +113,8 @@ export default class HeroManager {
                 this.activeSparkles--;
             }
         })
-        .to(sparkle, { opacity: 0.5, scale: 1.2, duration: 4, ease: "sine.inOut" })
+        // FIX: Subimos la opacidad objetivo al 80% (0.8) para garantizar visibilidad
+        .to(sparkle, { opacity: 0.8, scale: 1.2, duration: 4, ease: "sine.inOut" })
         .to(sparkle, { y: -10, x: 5, duration: 8, ease: "none" }, "-=4")
         .to(sparkle, { opacity: 0, scale: 0.8, duration: 4, ease: "sine.inOut" }, "-=4");
     }
