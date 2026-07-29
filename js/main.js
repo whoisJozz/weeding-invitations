@@ -5,8 +5,9 @@ import IntroManager from './managers/IntroManager.js';
 import AudioManager from './managers/AudioManager.js';
 import HeroManager from './managers/HeroManager.js';
 import StoryManager from './managers/StoryManager.js';
+import PhotoManager from './managers/PhotoManager.js'; // Añadido: Acto II.V
 import CountdownManager from './managers/CountdownManager.js';
-import EventManager from './managers/EventManager.js'; // Unifica Act3 y Act4
+import EventManager from './managers/EventManager.js'; 
 
 document.addEventListener('DOMContentLoaded', () => {
     const lenis = new Lenis({
@@ -32,8 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         heroManager.playEntrySequence();
         
         new StoryManager();
+        new PhotoManager(); // Ejecuta la coreografía de Nuestro Recuerdo
         new CountdownManager(); 
-        new EventManager(); // Orquesta toda la escena del evento
+        new EventManager(); 
 
         setTimeout(() => {
             lenis.start();

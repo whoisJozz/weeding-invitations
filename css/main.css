@@ -5,8 +5,9 @@
 @import url('components/intro.css');
 @import url('components/hero.css');
 @import url('components/story.css');
-@import url('components/countdown.css'); /* Separado por responsabilidad */
-@import url('components/event.css');     /* Unifica Fecha y Lugar */
+@import url('components/photo.css');     /* Añadido: Nuestro Recuerdo */
+@import url('components/countdown.css'); 
+@import url('components/event.css');     
 
 *, *::before, *::after {
     box-sizing: border-box;
