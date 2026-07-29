@@ -1,0 +1,52 @@
+/**
+ * countdown.css
+ * Extraído para no duplicar código
+ */
+.countdown-section {
+    position: relative;
+    width: 100vw;
+    min-height: 50vh; /* Se reduce la altura para que la transición a la escena fluya mejor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    padding: 10vh 10vw;
+}
+
+.countdown-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 4vw, 3rem);
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    min-width: 60px;
+}
+
+.countdown-value {
+    font-family: var(--font-primary);
+    font-size: clamp(3rem, 7vw, 5rem);
+    color: var(--color-navy);
+    line-height: 1;
+}
+
+.countdown-label {
+    font-family: var(--font-secondary);
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-taupe);
+}
+
+.countdown-separator {
+    font-family: var(--font-primary);
+    font-size: clamp(2rem, 5vw, 4rem);
+    color: var(--color-gold);
+    margin-top: -1.5rem;
+    opacity: 0.6;
+}

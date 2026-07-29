@@ -59,22 +59,9 @@
         </div>
     </section>
 
-    <section id="fecha" class="act3-section">
-        <div class="date-content">
-            <span class="date-kicker act3-anim">El Gran Día</span>
-            <span class="date-day act3-anim">Sábado</span>
-            <span class="date-number act3-anim">21</span>
-            <span class="date-month act3-anim">Noviembre</span>
-            <span class="date-year act3-anim">2026</span>
-            <div class="date-time act3-anim">
-                <span class="time-label">Hora</span>
-                <span class="time-value">17:00 hrs</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="contador" class="act3-section">
-        <div class="countdown-content act3-anim">
+    <!-- Salida del contador (Inicio de la secuencia del Evento) -->
+    <section id="contador" class="countdown-section">
+        <div class="countdown-content">
             <div class="countdown-item">
                 <span class="countdown-value" id="cd-days">00</span>
                 <span class="countdown-label">DÍAS</span>
@@ -97,21 +84,34 @@
         </div>
     </section>
 
-    <!-- ACTO IV: La Ubicación (Sprint 06) -->
-    <section id="ubicacion" class="act4-section">
-        <div class="act4-content">
-            <!-- Texto narrativo -->
-            <p class="act4-narrative act4-anim">"Cada historia tiene un lugar donde comienza un nuevo capítulo."</p>
+    <!-- ACTO V: Escena Completa del Evento -->
+    <section id="evento" class="event-section">
+        <div class="event-content">
+            <!-- Texto Narrativo -->
+            <p class="event-narrative">"Cada historia tiene un lugar donde comienza un nuevo capítulo."</p>
             
-            <div class="act4-details">
-                <div class="act4-event act4-anim">
+            <div class="event-details">
+                <!-- Bloque Fecha (Animación de Impresión) -->
+                <div class="event-date">
+                    <span class="date-day">Sábado</span>
+                    <span class="date-number">21</span>
+                    <span class="date-month">Noviembre</span>
+                    <span class="date-year">2026</span>
+                    <div class="date-time">
+                        <span class="time-label">Hora</span>
+                        <span class="time-value">17:00 hrs</span>
+                    </div>
+                </div>
+                
+                <!-- Bloque Lugar (Fade) -->
+                <div class="event-location">
                     <span class="event-label">Ceremonia & Recepción</span>
                     <h3 class="event-venue">Casino "Luxury Eventos"</h3>
                 </div>
                 
-                <!-- Botón Editorial Placa -->
-                <a href="https://maps.app.goo.gl/oKwXG9w9Fgn1DwzZ8" target="_blank" rel="noopener noreferrer" class="editorial-btn act4-anim">
-                    Ver ubicación
+                <!-- Botón Lámina Dorada -->
+                <a href="https://maps.app.goo.gl/oKwXG9w9Fgn1DwzZ8" target="_blank" rel="noopener noreferrer" class="editorial-btn">
+                    <span class="gold-foil">Ver ubicación</span>
                 </a>
             </div>
         </div>

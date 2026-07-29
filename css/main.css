@@ -5,8 +5,8 @@
 @import url('components/intro.css');
 @import url('components/hero.css');
 @import url('components/story.css');
-@import url('components/act3.css');
-@import url('components/act4.css'); /* Añadido Sprint 06 */
+@import url('components/countdown.css'); /* Separado por responsabilidad */
+@import url('components/event.css');     /* Unifica Fecha y Lugar */
 
 *, *::before, *::after {
     box-sizing: border-box;

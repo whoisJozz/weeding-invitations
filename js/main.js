@@ -5,9 +5,8 @@ import IntroManager from './managers/IntroManager.js';
 import AudioManager from './managers/AudioManager.js';
 import HeroManager from './managers/HeroManager.js';
 import StoryManager from './managers/StoryManager.js';
-import Act3Manager from './managers/Act3Manager.js';
 import CountdownManager from './managers/CountdownManager.js';
-import Act4Manager from './managers/Act4Manager.js'; // Añadido Sprint 06
+import EventManager from './managers/EventManager.js'; // Unifica Act3 y Act4
 
 document.addEventListener('DOMContentLoaded', () => {
     const lenis = new Lenis({
@@ -33,9 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
         heroManager.playEntrySequence();
         
         new StoryManager();
-        new Act3Manager(); 
-        new CountdownManager();
-        new Act4Manager(); // Inicialización Acto IV
+        new CountdownManager(); 
+        new EventManager(); // Orquesta toda la escena del evento
 
         setTimeout(() => {
             lenis.start();
