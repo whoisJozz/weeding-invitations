@@ -6,7 +6,8 @@ import AudioManager from './managers/AudioManager.js';
 import HeroManager from './managers/HeroManager.js';
 import StoryManager from './managers/StoryManager.js';
 import Act3Manager from './managers/Act3Manager.js';
-import CountdownManager from './managers/CountdownManager.js'; // Sprint 05
+import CountdownManager from './managers/CountdownManager.js';
+import Act4Manager from './managers/Act4Manager.js'; // Añadido Sprint 06
 
 document.addEventListener('DOMContentLoaded', () => {
     const lenis = new Lenis({
@@ -33,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
         
         new StoryManager();
         new Act3Manager(); 
-        new CountdownManager(); // Inicia el reloj optimizado
+        new CountdownManager();
+        new Act4Manager(); // Inicialización Acto IV
 
         setTimeout(() => {
             lenis.start();
