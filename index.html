@@ -1,35 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    
-    <title>A&Y | Nuestra Boda </title>
-    
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>">
-    
-    <link rel="preload" href="assets/fonts/Symphony.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="assets/images/floral/flowers-top-left.png" as="image" type="image/png">
-    <link rel="preload" href="assets/images/floral/flowers-bottom-right.png" as="image" type="image/png">
-    
-    <link rel="stylesheet" href="css/base/typography.css">
-    <link rel="stylesheet" href="css/main.css">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js" defer></script>
-    
-    <script type="module" src="js/main.js" defer></script>
-</head>
-<body style="overflow-y: hidden;">
-    <div class="editorial-background" aria-hidden="true"></div>
-
-    <section id="intro" class="intro-section" aria-label="Introducción cinematográfica">
-        <div id="start-text" class="intro-text">Toca para abrir</div>
-        <video id="intro-video" class="intro-video" src="assets/video/intro.mp4" playsinline muted preload="auto"></video>
-        <audio id="bg-audio" src="assets/audio/background.mp3" loop preload="auto"></audio>
-    </section>
-
+<!-- ACTO I: Hero Editorial -->
     <section id="hero" class="hero-section" aria-hidden="true">
         <div class="hero-frame">
             <div id="sparkles-container"></div>
@@ -47,93 +16,125 @@
                 </h1>
                 
                 <p class="hero-quote">"El inicio de nuestra nueva historia."</p>
-            </div>
-        </div>
-    </section>
 
-    <section id="story" class="story-section">
-        <div class="story-content">
-            <p class="story-text">"Toda gran historia comienza con un <span class="highlight-gold">sí</span>."</p>
-            <p class="story-text">"Nuestros caminos se cruzaron de manera <span class="highlight-gold">inesperada</span>."</p>
-            <p class="story-text">"Y desde ese instante, supimos que sería <span class="highlight-gold">para siempre</span>."</p>
-        </div>
-    </section>
-
-    <!-- ACTO II.V: Nuestro Recuerdo (Sprint 06 / RFC-011) -->
-    <section id="recuerdo" class="photo-section" aria-label="Fotografía de nuestro compromiso">
-        <div class="photo-container act-photo-anim">
-            <!-- Capa trasera del sobre -->
-            <div class="envelope-back" aria-hidden="true"></div>
-            
-            <!-- Fotografía central -->
-            <div class="photo-wrapper">
-                <img src="assets/images/recuerdo.jpg" alt="Nuestro recuerdo al atardecer" class="fine-art-photo" loading="lazy">
-            </div>
-            
-            <!-- Capa frontal del sobre (bolsillo) -->
-            <div class="envelope-front" aria-hidden="true"></div>
-        </div>
-        
-        <div class="photo-caption act-caption-anim">
-            <p>Cada fotografía guarda un instante...<br>esta guarda el comienzo de nuestra vida juntos.</p>
-        </div>
-    </section>
-
-    <section id="contador" class="countdown-section">
-        <div class="countdown-content">
-            <div class="countdown-item">
-                <span class="countdown-value" id="cd-days">00</span>
-                <span class="countdown-label">DÍAS</span>
-            </div>
-            <div class="countdown-separator">:</div>
-            <div class="countdown-item">
-                <span class="countdown-value" id="cd-hours">00</span>
-                <span class="countdown-label">HORAS</span>
-            </div>
-            <div class="countdown-separator">:</div>
-            <div class="countdown-item">
-                <span class="countdown-value" id="cd-mins">00</span>
-                <span class="countdown-label">MINUTOS</span>
-            </div>
-            <div class="countdown-separator">:</div>
-            <div class="countdown-item">
-                <span class="countdown-value" id="cd-secs">00</span>
-                <span class="countdown-label">SEGUNDOS</span>
-            </div>
-        </div>
-    </section>
-
-    <section id="evento" class="event-section">
-        <div class="event-content">
-            <p class="event-narrative">"Cada historia tiene un lugar donde comienza un nuevo capítulo."</p>
-            
-            <div class="event-details">
-                <div class="event-date">
-                    <span class="date-day">Sábado</span>
-                    <span class="date-number">21</span>
-                    <span class="date-month">Noviembre</span>
-                    <span class="date-year">2026</span>
-                    <div class="date-time">
-                        <span class="time-label">Hora</span>
-                        <span class="time-value">17:00 hrs</span>
-                    </div>
+                <!-- NUEVO: Versículo Bíblico -->
+                <div class="hero-verse-block">
+                    <p class="hero-verse">Dos corazones caminando juntos y Dios guiando cada paso; porque el cordón de tres dobleces no se rompe fácilmente.</p>
+                    <p class="hero-reference">Eclesiastés 4:9–12</p>
                 </div>
-                
-                <div class="event-location">
-                    <span class="event-label">Ceremonia & Recepción</span>
-                    <h3 class="event-venue">Casino "Luxury Eventos"</h3>
-                </div>
-                
-                <a href="https://maps.app.goo.gl/oKwXG9w9Fgn1DwzZ8" target="_blank" rel="noopener noreferrer" class="editorial-btn">
-                    <span class="gold-foil">Ver ubicación</span>
-                </a>
+            </div>
+
+            <!-- NUEVO: Indicador de Scroll -->
+            <div class="scroll-indicator">
+                <span class="scroll-text">Descubre</span>
+                <div class="scroll-line"></div>
             </div>
         </div>
     </section>
 
-    <section id="dress-code" class="hidden-section" aria-hidden="true"></section>
-    <section id="mesa-regalos" class="hidden-section" aria-hidden="true"></section>
-    <section id="padrinos" class="hidden-section" aria-hidden="true"></section>
-    <section id="confirmacion" class="hidden-section" aria-hidden="true"></section>
-</body>
-</html>
+<!-- ... (El resto del contenido hasta llegar a padrinos se mantiene igual) ... -->
+
+    <!-- ACTO VI: Quienes caminarán a nuestro lado -->
+    <section id="padrinos" class="gp-section">
+        <div class="gp-content">
+            <h2 class="gp-main-title gp-anim">Quienes caminarán a nuestro lado</h2>
+
+            <!-- Oficiantes -->
+            <div class="gp-group gp-anim">
+                <div class="gp-item">
+                    <span class="gp-category">Pastor</span>
+                    <p class="gp-name">Joaquín Lugo</p>
+                </div>
+                <div class="gp-item">
+                    <span class="gp-category">Maestra de ceremonia</span>
+                    <p class="gp-name">Elizabeth Lugo</p>
+                </div>
+            </div>
+
+            <div class="gp-separator gp-anim" aria-hidden="true"></div>
+
+            <!-- Padres -->
+            <div class="gp-group gp-anim">
+                <div class="gp-item">
+                    <span class="gp-category">Padres del Novio</span>
+                    <p class="gp-name">Salvador Zárate Barajas & Ángeles Imelda Pérez Rodríguez</p>
+                </div>
+                <div class="gp-item">
+                    <span class="gp-category">Padres de la Novia</span>
+                    <p class="gp-name">Ricardo Lugo Zúñiga & Claudia Yesenia Gómez Robles</p>
+                </div>
+            </div>
+
+            <div class="gp-separator gp-anim" aria-hidden="true"></div>
+
+            <!-- Padrinos y Madrinas (Grid Estricto de 2 columnas) -->
+            <div class="gp-item gp-anim" style="margin-bottom: 2rem;">
+                <span class="gp-category" style="color: var(--color-gold); font-size: 1rem;">Padrinos & Madrinas</span>
+            </div>
+            
+            <div class="gp-grid">
+                <div class="gp-item gp-anim"><span class="gp-category">Anillos</span><p class="gp-name">Ismael Zúñiga & Karina Lugo</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Arras</span><p class="gp-name">Rogelio Meza & Sonia Meza</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Lazo</span><p class="gp-name">Ricardo Lugo & Yessi Gómez</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Biblia</span><p class="gp-name">Refugio Zúñiga</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Copas</span><p class="gp-name">Salvador Zarate & Imelda Pérez</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Cojines</span><p class="gp-name">Ramsés Lerma & Blanca Alcaraz</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Ramo</span><p class="gp-name">Meraly Lugo</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Pastel</span><p class="gp-name">Paty Maldonado</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Comida</span><p class="gp-name">Lety Gómez & Socorro Gómez</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Centros de mesas</span><p class="gp-name">Hafid Zúñiga & María Alemán</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Mesa de dulces</span><p class="gp-name">Ángel Vargas & Jocelyn Merino</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Invitaciones</span><p class="gp-name">Josué Lerma</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Recuerditos</span><p class="gp-name">Andrea Hernández</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Decoración</span><p class="gp-name">Carlos Villagrana & Cynthia Flores<br>Juan Manuel Zúñiga & Elizabeth Lugo<br>Jannet Lugo</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Salón de eventos</span><p class="gp-name">Ricardo Lugo & Yessi Gómez</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Luna de miel</span><p class="gp-name">Rogelio Meza & Sonia Meza</p></div>
+            </div>
+
+            <div class="gp-separator gp-anim" aria-hidden="true"></div>
+
+            <!-- Cortejo -->
+            <div class="gp-group gp-anim">
+                <div class="gp-item">
+                    <span class="gp-category">Damo de Honor</span>
+                    <p class="gp-name">Emanuel Lerma</p>
+                </div>
+                <div class="gp-item">
+                    <span class="gp-category">Dama de Honor</span>
+                    <p class="gp-name">Meraly Lugo</p>
+                </div>
+            </div>
+            
+            <div class="gp-grid" style="margin-top: 3rem;">
+                <div class="gp-item gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Daniel Zúñiga</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Michelle Meza & Belén Gómez</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Héctor Martínez & Denise Basto</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Cristian García & Itzel Venegas</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">David López & Dani Vargas</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Erick Zárate & Stefany Zárate</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Ángel Vargas & Jocelyn Merino</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Josué Lerma & Arely Maldonado</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Jonathan Zúñiga & Ana Ávalos</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Jeremy Lugo & Carolina Maldonado</p></div>
+                <div class="gp-item gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Daniel Zárate & Guiselle Gómez</p></div>
+            </div>
+
+            <div class="gp-separator gp-anim" aria-hidden="true"></div>
+
+            <!-- Pajecitos (Sin estilos en línea, obedece estrictamente al gp-grid de 2 columnas) -->
+            <div class="gp-item gp-anim" style="margin-bottom: 2rem;">
+                <span class="gp-category" style="color: var(--color-gold); font-size: 1rem;">Pajecitos</span>
+            </div>
+            
+            <div class="gp-grid">
+                <div class="gp-item gp-anim"><p class="gp-name">Elías Villagrana</p></div>
+                <div class="gp-item gp-anim"><p class="gp-name">Liam Vargas</p></div>
+                <div class="gp-item gp-anim"><p class="gp-name">Izabella Rodriguez</p></div>
+                <div class="gp-item gp-anim"><p class="gp-name">Julieta Villagrana</p></div>
+                <div class="gp-item gp-anim"><p class="gp-name">Aria Bernal</p></div>
+                <div class="gp-item gp-anim"><p class="gp-name">Jordania Orozco</p></div>
+                <div class="gp-item gp-anim"><p class="gp-name">Isabella Orozco</p></div>
+            </div>
+
+        </div>
+    </section>

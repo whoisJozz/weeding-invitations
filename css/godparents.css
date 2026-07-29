@@ -1,0 +1,90 @@
+/**
+ * godparents.css
+ * Sprint 07: Homenaje Editorial
+ */
+
+.gp-section {
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 15vh 8vw;
+    z-index: 10;
+}
+
+.gp-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.gp-main-title {
+    font-family: var(--font-primary);
+    font-size: clamp(3.5rem, 8vw, 5rem);
+    color: var(--color-navy);
+    line-height: 1.2;
+    margin-bottom: 5rem;
+}
+
+.gp-group {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.gp-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3.5rem 2rem; /* Mucho respiro vertical */
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .gp-grid {
+        grid-template-columns: 1fr 1fr; /* Dos columnas elegantes en Desktop */
+    }
+}
+
+.gp-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Categorías en fuente secundaria tipo Montserrat */
+.gp-category {
+    font-family: var(--font-secondary);
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-taupe);
+}
+
+/* Nombres en Symphony */
+.gp-name {
+    font-family: var(--font-primary);
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    color: var(--color-navy);
+    line-height: 1.2;
+}
+
+/* Separadores finos */
+.gp-separator {
+    width: 60px;
+    height: 1px;
+    background-color: rgba(200, 162, 74, 0.4); /* Dorado sutil */
+    margin: 5rem auto;
+}
+
+/* Base para el batch de animaciones GSAP */
+.gp-anim {
+    opacity: 0;
+    will-change: opacity, transform, filter;
+}

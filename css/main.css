@@ -5,9 +5,10 @@
 @import url('components/intro.css');
 @import url('components/hero.css');
 @import url('components/story.css');
-@import url('components/photo.css');     /* Añadido: Nuestro Recuerdo */
+@import url('components/photo.css');
 @import url('components/countdown.css'); 
 @import url('components/event.css');     
+@import url('components/godparents.css'); /* Añadido: Sprint 07 */
 
 *, *::before, *::after {
     box-sizing: border-box;
