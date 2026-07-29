@@ -1,4 +1,36 @@
-<!-- ACTO I: Hero Editorial -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    
+    <title>A&Y | Nuestra Boda </title>
+    
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>">
+    
+    <link rel="preload" href="assets/fonts/Symphony.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="assets/images/floral/flowers-top-left.png" as="image" type="image/png">
+    <link rel="preload" href="assets/images/floral/flowers-bottom-right.png" as="image" type="image/png">
+    
+    <link rel="stylesheet" href="css/base/typography.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.19/bundled/lenis.min.js" defer></script>
+    
+    <script type="module" src="js/main.js" defer></script>
+</head>
+<body style="overflow-y: hidden;">
+    <div class="editorial-background" aria-hidden="true"></div>
+
+    <section id="intro" class="intro-section" aria-label="Introducción cinematográfica">
+        <div id="start-text" class="intro-text">Toca para abrir</div>
+        <video id="intro-video" class="intro-video" src="assets/video/intro.mp4" playsinline muted preload="auto"></video>
+        <audio id="bg-audio" src="assets/audio/background.mp3" loop preload="auto"></audio>
+    </section>
+
+    <!-- ACTO I: Hero Editorial -->
     <section id="hero" class="hero-section" aria-hidden="true">
         <div class="hero-frame">
             <div id="sparkles-container"></div>
@@ -32,14 +64,84 @@
         </div>
     </section>
 
-<!-- ... (El resto del contenido hasta llegar a padrinos se mantiene igual) ... -->
+    <section id="story" class="story-section">
+        <div class="story-content">
+            <p class="story-text">"Toda gran historia comienza con un <span class="highlight-gold">sí</span>."</p>
+            <p class="story-text">"Nuestros caminos se cruzaron de manera <span class="highlight-gold">inesperada</span>."</p>
+            <p class="story-text">"Y desde ese instante, supimos que sería <span class="highlight-gold">para siempre</span>."</p>
+        </div>
+    </section>
 
-    <!-- ACTO VI: Quienes caminarán a nuestro lado -->
+    <section id="recuerdo" class="photo-section" aria-label="Fotografía de nuestro compromiso">
+        <div class="photo-container act-photo-anim">
+            <div class="envelope-back" aria-hidden="true"></div>
+            <div class="photo-wrapper">
+                <img src="assets/images/recuerdo.jpg" alt="Nuestro recuerdo al atardecer" class="fine-art-photo" loading="lazy">
+            </div>
+            <div class="envelope-front" aria-hidden="true"></div>
+        </div>
+        
+        <div class="photo-caption act-caption-anim">
+            <p>Cada fotografía guarda un instante...<br>esta guarda el comienzo de nuestra vida juntos.</p>
+        </div>
+    </section>
+
+    <section id="contador" class="countdown-section">
+        <div class="countdown-content">
+            <div class="countdown-item">
+                <span class="countdown-value" id="cd-days">00</span>
+                <span class="countdown-label">DÍAS</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-value" id="cd-hours">00</span>
+                <span class="countdown-label">HORAS</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-value" id="cd-mins">00</span>
+                <span class="countdown-label">MINUTOS</span>
+            </div>
+            <div class="countdown-separator">:</div>
+            <div class="countdown-item">
+                <span class="countdown-value" id="cd-secs">00</span>
+                <span class="countdown-label">SEGUNDOS</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="evento" class="event-section">
+        <div class="event-content">
+            <p class="event-narrative">"Cada historia tiene un lugar donde comienza un nuevo capítulo."</p>
+            
+            <div class="event-details">
+                <div class="event-date">
+                    <span class="date-day">Sábado</span>
+                    <span class="date-number">21</span>
+                    <span class="date-month">Noviembre</span>
+                    <span class="date-year">2026</span>
+                    <div class="date-time">
+                        <span class="time-label">Hora</span>
+                        <span class="time-value">17:00 hrs</span>
+                    </div>
+                </div>
+                
+                <div class="event-location">
+                    <span class="event-label">Ceremonia & Recepción</span>
+                    <h3 class="event-venue">Casino "Luxury Eventos"</h3>
+                </div>
+                
+                <a href="https://maps.app.goo.gl/oKwXG9w9Fgn1DwzZ8" target="_blank" rel="noopener noreferrer" class="editorial-btn">
+                    <span class="gold-foil">Ver ubicación</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <section id="padrinos" class="gp-section">
         <div class="gp-content">
             <h2 class="gp-main-title gp-anim">Quienes caminarán a nuestro lado</h2>
 
-            <!-- Oficiantes -->
             <div class="gp-group gp-anim">
                 <div class="gp-item">
                     <span class="gp-category">Pastor</span>
@@ -53,7 +155,6 @@
 
             <div class="gp-separator gp-anim" aria-hidden="true"></div>
 
-            <!-- Padres -->
             <div class="gp-group gp-anim">
                 <div class="gp-item">
                     <span class="gp-category">Padres del Novio</span>
@@ -67,7 +168,6 @@
 
             <div class="gp-separator gp-anim" aria-hidden="true"></div>
 
-            <!-- Padrinos y Madrinas (Grid Estricto de 2 columnas) -->
             <div class="gp-item gp-anim" style="margin-bottom: 2rem;">
                 <span class="gp-category" style="color: var(--color-gold); font-size: 1rem;">Padrinos & Madrinas</span>
             </div>
@@ -93,7 +193,6 @@
 
             <div class="gp-separator gp-anim" aria-hidden="true"></div>
 
-            <!-- Cortejo -->
             <div class="gp-group gp-anim">
                 <div class="gp-item">
                     <span class="gp-category">Damo de Honor</span>
@@ -121,7 +220,6 @@
 
             <div class="gp-separator gp-anim" aria-hidden="true"></div>
 
-            <!-- Pajecitos (Sin estilos en línea, obedece estrictamente al gp-grid de 2 columnas) -->
             <div class="gp-item gp-anim" style="margin-bottom: 2rem;">
                 <span class="gp-category" style="color: var(--color-gold); font-size: 1rem;">Pajecitos</span>
             </div>
@@ -135,6 +233,12 @@
                 <div class="gp-item gp-anim"><p class="gp-name">Jordania Orozco</p></div>
                 <div class="gp-item gp-anim"><p class="gp-name">Isabella Orozco</p></div>
             </div>
-
         </div>
     </section>
+
+    <!-- Contenedores restantes -->
+    <section id="dress-code" class="hidden-section" aria-hidden="true"></section>
+    <section id="mesa-regalos" class="hidden-section" aria-hidden="true"></section>
+    <section id="confirmacion" class="hidden-section" aria-hidden="true"></section>
+</body>
+</html>

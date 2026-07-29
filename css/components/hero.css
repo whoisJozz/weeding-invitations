@@ -35,10 +35,9 @@
     will-change: opacity;
 }
 
-/* FIX: Contenedor absoluto para garantizar que los brillos se rendericen en el espacio correcto */
 #sparkles-container {
     position: absolute;
-    inset: 0; /* Equivale a top, left, right, bottom 0 */
+    inset: 0; 
     width: 100%;
     height: 100%;
     z-index: 5;
@@ -62,7 +61,6 @@
     will-change: opacity;
 }
 
-/* FIX: Posiciones en 0 o ligeramente negativas (-2%) para no cortar la ilustración y abarcar todo el rincón */
 .floral-accent.top-left { 
     top: -2%; 
     left: -2%; 
@@ -133,7 +131,6 @@
     opacity: 0;
 }
 
-/* FIX: Devolvemos el núcleo dorado al brillo para que no desaparezca en WebKit */
 .sparkle {
     position: absolute;
     width: 3px;
@@ -144,4 +141,62 @@
     pointer-events: none;
     opacity: 0;
     will-change: transform, opacity;
+}
+
+/* --- VERSÍCULO BÍBLICO --- */
+.hero-verse-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    margin-top: -1.5rem;
+    max-width: 85%;
+    will-change: opacity, transform, filter;
+}
+
+.hero-verse {
+    font-family: var(--font-secondary);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    color: #8C8273;
+    line-height: 1.8;
+    opacity: 0;
+}
+
+.hero-reference {
+    font-family: var(--font-secondary);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: var(--color-gold);
+    opacity: 0;
+}
+
+/* --- INDICADOR DE SCROLL --- */
+.scroll-indicator {
+    position: absolute;
+    bottom: 3vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    opacity: 0;
+    will-change: opacity, transform;
+}
+
+.scroll-text {
+    font-family: var(--font-secondary);
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-taupe);
+}
+
+.scroll-line {
+    width: 1px;
+    height: 35px;
+    background: linear-gradient(to bottom, rgba(200, 162, 74, 0.6), transparent);
 }
