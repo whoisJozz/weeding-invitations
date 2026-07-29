@@ -1,6 +1,8 @@
 /**
  * godparents.css
+ * Sprint 07.1: Editorial Grid Refactor
  */
+
 .gp-section {
     position: relative;
     width: 100vw;
@@ -25,44 +27,65 @@
     font-size: clamp(3.5rem, 8vw, 5rem);
     color: var(--color-navy);
     line-height: 1.2;
-    margin-bottom: 5rem;
-}
-
-.gp-group {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    width: 100%;
     margin-bottom: 2rem;
 }
 
-/* Sistema de Grid */
-.gp-grid {
+/* --- NUEVA ARQUITECTURA: CAPÍTULOS EDITORIALES --- */
+.editorial-chapter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 1rem 0; 
+}
+
+.chapter-title {
+    font-family: var(--font-secondary);
+    font-size: 1rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--color-gold);
+    margin-bottom: 5rem; /* Respiro vertical generoso antes del grid */
+}
+
+/* GRID: Mobile Strict 1 Column / Tablet+ 2 Columns */
+.editorial-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 3.5rem 2rem; 
+    /* Obliga a ser 1 columna en móvil para priorizar lectura */
+    grid-template-columns: 1fr; 
+    gap: 5rem 3rem; /* Separación ampliada para reducir densidad visual */
     width: 100%;
 }
 
 @media (min-width: 768px) {
-    .gp-grid {
-        grid-template-columns: repeat(2, 1fr); 
+    .editorial-grid {
+        grid-template-columns: repeat(2, 1fr);
         align-items: start;
     }
     
-    /* MAGIA: Si el elemento es impar y es el último, se centra abarcando las 2 columnas */
-    .gp-grid > .gp-item:last-child:nth-child(odd) {
+    /* El último elemento impar de cualquier bloque se centrará perfectamente */
+    .editorial-grid > .editorial-card:last-child:nth-child(odd) {
         grid-column: 1 / -1;
         margin: 0 auto;
         width: 100%;
     }
 }
 
-.gp-item {
+/* CARDS: Limitan el ancho del texto para envolverlo como párrafo */
+.editorial-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1.2rem; 
+    margin: 0 auto;
+    width: 100%;
+    max-width: 90%; 
+}
+
+@media (min-width: 768px) {
+    .editorial-card {
+        max-width: 85%; /* Acorta la línea en pantallas grandes */
+    }
 }
 
 .gp-category {
@@ -75,18 +98,21 @@
 
 .gp-name {
     font-family: var(--font-primary);
-    font-size: clamp(2rem, 5vw, 2.5rem);
+    /* Ligeramente reducido en base para mobile, previene invasión de columnas */
+    font-size: clamp(1.8rem, 5vw, 2.3rem); 
     color: var(--color-navy);
-    line-height: 1.2;
+    line-height: 1.3;
 }
 
+/* SEPARATOR: Línea dorada de respiro */
 .gp-separator {
-    width: 60px;
+    width: 45px; 
     height: 1px;
     background-color: rgba(200, 162, 74, 0.4); 
-    margin: 5rem auto;
+    margin: 6rem auto; /* Máxima separación editorial */
 }
 
+/* ANIMACIONES GSAP */
 .gp-anim {
     opacity: 0;
     will-change: opacity, transform, filter;
