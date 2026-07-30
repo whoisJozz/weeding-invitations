@@ -1,56 +1,64 @@
 /**
  * countdown.css
- * FASE QA: Estandarización Editorial y Prevención de Overflow
+ * HOTFIX-001: Editorial Countdown Responsive Fix
  */
+
 .countdown-section {
     position: relative;
-    width: 100%; /* Causa raíz corregida: Se elimina 100vw */
-    min-height: 50vh; 
+    width: 100%;
+    min-height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
-    padding: 10vh 0; /* Solo respiración vertical */
+    padding: 10vh 0;
 }
 
 .countdown-content {
     display: flex;
+    flex-wrap: wrap; /* Último recurso de seguridad si falta espacio */
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 1000px; /* Ancho idéntico al Hero Frame */
-    padding: 0 30px; /* Margen interno idéntico al Hero Frame */
+    max-width: 1000px;
+    padding: 0 30px;
     margin: 0 auto;
-    gap: clamp(0.5rem, 3vw, 3rem); /* Gap fluido para evitar roturas en móviles pequeños */
+    /* El gap escala fluidamente: en desktop respira mucho, en móvil se compacta sin romper */
+    gap: clamp(0.2rem, 3vw, 3rem);
 }
 
 .countdown-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.8rem;
-    min-width: 50px;
+    justify-content: center;
+    gap: clamp(0.3rem, 1vw, 0.8rem);
+    /* Garantiza que cada bloque mida lo mismo para no descuadrar la simetría */
+    min-width: clamp(50px, 12vw, 90px);
 }
 
 .countdown-value {
     font-family: var(--font-primary);
-    font-size: clamp(2.5rem, 6vw, 5rem); /* Ajuste seguro para móviles */
+    font-size: clamp(2.2rem, 7vw, 5rem);
     color: var(--color-navy);
     line-height: 1;
 }
 
 .countdown-label {
     font-family: var(--font-secondary);
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
+    font-size: clamp(0.55rem, 1.5vw, 0.75rem);
+    letter-spacing: clamp(0.1em, 0.5vw, 0.2em);
     text-transform: uppercase;
     color: var(--color-taupe);
+    text-align: center;
 }
 
 .countdown-separator {
     font-family: var(--font-primary);
-    font-size: clamp(1.8rem, 4vw, 4rem);
+    font-size: clamp(1.8rem, 5vw, 4rem);
     color: var(--color-gold);
-    margin-top: -1.5rem;
+    /* Margen sutil, dinámico y proporcional para alinear con el centro óptico de los números */
+    margin-top: clamp(-0.5rem, -1vw, -1rem);
     opacity: 0.6;
+    line-height: 1;
 }
