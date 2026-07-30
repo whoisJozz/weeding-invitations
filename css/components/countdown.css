@@ -1,23 +1,27 @@
 /**
  * countdown.css
- * Extraído para no duplicar código
+ * FASE QA: Estandarización Editorial y Prevención de Overflow
  */
 .countdown-section {
     position: relative;
-    width: 100vw;
-    min-height: 50vh; /* Se reduce la altura para que la transición a la escena fluya mejor */
+    width: 100%; /* Causa raíz corregida: Se elimina 100vw */
+    min-height: 50vh; 
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
-    padding: 10vh 10vw;
+    padding: 10vh 0; /* Solo respiración vertical */
 }
 
 .countdown-content {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(1rem, 4vw, 3rem);
+    width: 100%;
+    max-width: 1000px; /* Ancho idéntico al Hero Frame */
+    padding: 0 30px; /* Margen interno idéntico al Hero Frame */
+    margin: 0 auto;
+    gap: clamp(0.5rem, 3vw, 3rem); /* Gap fluido para evitar roturas en móviles pequeños */
 }
 
 .countdown-item {
@@ -25,12 +29,12 @@
     flex-direction: column;
     align-items: center;
     gap: 0.8rem;
-    min-width: 60px;
+    min-width: 50px;
 }
 
 .countdown-value {
     font-family: var(--font-primary);
-    font-size: clamp(3rem, 7vw, 5rem);
+    font-size: clamp(2.5rem, 6vw, 5rem); /* Ajuste seguro para móviles */
     color: var(--color-navy);
     line-height: 1;
 }
@@ -45,7 +49,7 @@
 
 .countdown-separator {
     font-family: var(--font-primary);
-    font-size: clamp(2rem, 5vw, 4rem);
+    font-size: clamp(1.8rem, 4vw, 4rem);
     color: var(--color-gold);
     margin-top: -1.5rem;
     opacity: 0.6;

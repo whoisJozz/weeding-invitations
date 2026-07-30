@@ -8,7 +8,11 @@ import StoryManager from './managers/StoryManager.js';
 import PhotoManager from './managers/PhotoManager.js'; 
 import CountdownManager from './managers/CountdownManager.js';
 import EventManager from './managers/EventManager.js'; 
-import GodparentsManager from './managers/GodparentsManager.js'; // Añadido: Sprint 07
+/* GodparentsManager ELIMINADO EN APEGO AL RFC-017 */
+import DressCodeManager from './managers/DressCodeManager.js'; 
+import GiftManager from './managers/GiftManager.js';           
+import ConfirmationManager from './managers/ConfirmationManager.js'; 
+import ThanksManager from './managers/ThanksManager.js'; // NUEVO Sprint 10
 
 document.addEventListener('DOMContentLoaded', () => {
     const lenis = new Lenis({
@@ -37,7 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
         new PhotoManager(); 
         new CountdownManager(); 
         new EventManager(); 
-        new GodparentsManager(); // Inicia orquestación del Homenaje a los Padrinos
+        new DressCodeManager(); 
+        new GiftManager();      
+        new ConfirmationManager(); 
+        new ThanksManager(); // Inicia la coreografía final
 
         setTimeout(() => {
             lenis.start();

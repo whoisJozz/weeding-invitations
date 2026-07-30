@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     
-    <title>A&Y | Nuestra Boda </title>
+    <title>A&Y | Nuestra Boda</title>
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✉️</text></svg>">
     
@@ -24,12 +24,14 @@
 <body style="overflow-y: hidden;">
     <div class="editorial-background" aria-hidden="true"></div>
 
+    <!-- ACTO 0: Intro Video -->
     <section id="intro" class="intro-section" aria-label="Introducción cinematográfica">
         <div id="start-text" class="intro-text">Toca para abrir</div>
         <video id="intro-video" class="intro-video" src="assets/video/intro.mp4" playsinline muted preload="auto"></video>
         <audio id="bg-audio" src="assets/audio/background.mp3" loop preload="auto"></audio>
     </section>
 
+    <!-- ACTO I: Hero Editorial -->
     <section id="hero" class="hero-section" aria-hidden="true">
         <div class="hero-frame">
             <div id="sparkles-container"></div>
@@ -61,6 +63,7 @@
         </div>
     </section>
 
+    <!-- ACTO II: Historia -->
     <section id="story" class="story-section">
         <div class="story-content">
             <p class="story-text">"Toda gran historia comienza con un <span class="highlight-gold">sí</span>."</p>
@@ -69,11 +72,12 @@
         </div>
     </section>
 
+    <!-- ACTO II.V: Nuestro Recuerdo -->
     <section id="recuerdo" class="photo-section" aria-label="Fotografía de nuestro compromiso">
         <div class="photo-container act-photo-anim">
             <div class="envelope-back" aria-hidden="true"></div>
             <div class="photo-wrapper">
-                <img src="assets/images/recuerdo.jpg" alt="Nuestro recuerdo al atardecer" class="fine-art-photo" loading="lazy">
+                <img src="assets/images/recuerdo.png" alt="Nuestro recuerdo al atardecer" class="fine-art-photo" loading="lazy">
             </div>
             <div class="envelope-front" aria-hidden="true"></div>
         </div>
@@ -83,6 +87,7 @@
         </div>
     </section>
 
+    <!-- ACTO IV: Contador -->
     <section id="contador" class="countdown-section">
         <div class="countdown-content">
             <div class="countdown-item">
@@ -107,6 +112,7 @@
         </div>
     </section>
 
+    <!-- ACTO V: Evento y Ubicación -->
     <section id="evento" class="event-section">
         <div class="event-content">
             <p class="event-narrative">"Cada historia tiene un lugar donde comienza un nuevo capítulo."</p>
@@ -135,107 +141,171 @@
         </div>
     </section>
 
-    <!-- ACTO VI: Editorial Godparents (Sprint 07.1) -->
-    <section id="padrinos" class="gp-section">
-        <div class="gp-content">
-            <h2 class="gp-main-title gp-anim">Quienes caminarán a nuestro lado</h2>
-
-            <div class="gp-separator gp-anim" aria-hidden="true"></div>
-
-            <!-- CAPÍTULO: Oficiantes y Padres -->
-            <div class="editorial-chapter">
-                <div class="editorial-grid">
-                    <div class="editorial-card gp-anim">
-                        <span class="gp-category">Pastor</span>
-                        <p class="gp-name">Joaquín Lugo</p>
-                    </div>
-                    <div class="editorial-card gp-anim">
-                        <span class="gp-category">Maestra de ceremonia</span>
-                        <p class="gp-name">Elizabeth Lugo</p>
-                    </div>
-                    
-                    <div class="editorial-card gp-anim" style="margin-top: 2rem;">
-                        <span class="gp-category">Padres del Novio</span>
-                        <p class="gp-name">Salvador Zárate Barajas & Ángeles Imelda Pérez Rodríguez</p>
-                    </div>
-                    <div class="editorial-card gp-anim" style="margin-top: 2rem;">
-                        <span class="gp-category">Padres de la Novia</span>
-                        <p class="gp-name">Ricardo Lugo Zúñiga & Claudia Yesenia Gómez Robles</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="gp-separator gp-anim" aria-hidden="true"></div>
-
-            <!-- CAPÍTULO: Padrinos y Madrinas -->
-            <div class="editorial-chapter">
-                <h3 class="chapter-title gp-anim">Padrinos & Madrinas</h3>
-                <div class="editorial-grid">
-                    <div class="editorial-card gp-anim"><span class="gp-category">Anillos</span><p class="gp-name">Ismael Zúñiga & Karina Lugo</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Arras</span><p class="gp-name">Rogelio Meza & Sonia Meza</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Lazo</span><p class="gp-name">Ricardo Lugo & Yessi Gómez</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Biblia</span><p class="gp-name">Refugio Zúñiga</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Copas</span><p class="gp-name">Salvador Zarate & Imelda Pérez</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Cojines</span><p class="gp-name">Ramsés Lerma & Blanca Alcaraz</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Ramo</span><p class="gp-name">Meraly Lugo</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Pastel</span><p class="gp-name">Paty Maldonado</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Comida</span><p class="gp-name">Lety Gómez & Socorro Gómez</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Centros de mesas</span><p class="gp-name">Hafid Zúñiga & María Alemán</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Mesa de dulces</span><p class="gp-name">Ángel Vargas & Jocelyn Merino</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Invitaciones</span><p class="gp-name">Josué Lerma</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Recuerditos</span><p class="gp-name">Andrea Hernández</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Decoración</span><p class="gp-name">Carlos Villagrana & Cynthia Flores<br>Juan Manuel Zúñiga & Elizabeth Lugo<br>Jannet Lugo</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Salón de eventos</span><p class="gp-name">Ricardo Lugo & Yessi Gómez</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Luna de miel</span><p class="gp-name">Rogelio Meza & Sonia Meza</p></div>
-                </div>
-            </div>
-
-            <div class="gp-separator gp-anim" aria-hidden="true"></div>
-
-            <!-- CAPÍTULO: Cortejo -->
-            <div class="editorial-chapter">
-                <h3 class="chapter-title gp-anim">Cortejo</h3>
-                <div class="editorial-grid">
-                    <div class="editorial-card gp-anim"><span class="gp-category">Damo de Honor</span><p class="gp-name">Emanuel Lerma</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Dama de Honor</span><p class="gp-name">Meraly Lugo</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Daniel Zúñiga</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Michelle Meza & Belén Gómez</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Héctor Martínez & Denise Basto</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Cristian García & Itzel Venegas</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">David López & Dani Vargas</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Erick Zárate & Stefany Zárate</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Ángel Vargas & Jocelyn Merino</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Josué Lerma & Arely Maldonado</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Jonathan Zúñiga & Ana Ávalos</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Jeremy Lugo & Carolina Maldonado</p></div>
-                    <div class="editorial-card gp-anim"><span class="gp-category">Damos / Damas</span><p class="gp-name">Daniel Zárate & Guiselle Gómez</p></div>
-                </div>
-            </div>
-
-            <div class="gp-separator gp-anim" aria-hidden="true"></div>
-
-            <!-- CAPÍTULO: Pajecitos -->
-            <div class="editorial-chapter">
-                <h3 class="chapter-title gp-anim">Pajecitos</h3>
-                <div class="editorial-grid">
-                    <div class="editorial-card gp-anim"><p class="gp-name">Elías Villagrana</p></div>
-                    <div class="editorial-card gp-anim"><p class="gp-name">Liam Vargas</p></div>
-                    <div class="editorial-card gp-anim"><p class="gp-name">Izabella Rodriguez</p></div>
-                    <div class="editorial-card gp-anim"><p class="gp-name">Julieta Villagrana</p></div>
-                    <div class="editorial-card gp-anim"><p class="gp-name">Aria Bernal</p></div>
-                    <div class="editorial-card gp-anim"><p class="gp-name">Jordania Orozco</p></div>
-                    <div class="editorial-card gp-anim"><p class="gp-name">Isabella Orozco</p></div>
-                </div>
+    <!-- ACTO VII: Dress Code -->
+    <section id="dress-code" class="dc-section">
+        <div class="dc-content">
+            <h2 class="dc-title dc-anim">Dress Code</h2>
+            
+            <div class="dc-details dc-anim">
+                <p class="dc-text">Acompáñanos con vestimenta formal.</p>
+                <p class="dc-subtext">Lo más importante será compartir este día contigo.</p>
             </div>
             
-            <div class="gp-separator gp-anim" aria-hidden="true"></div>
-
+            <div class="dc-main dc-anim">
+                <span class="dc-formal">Formal</span>
+            </div>
         </div>
     </section>
 
-    <!-- Contenedores restantes -->
-    <section id="dress-code" class="hidden-section" aria-hidden="true"></section>
-    <section id="mesa-regalos" class="hidden-section" aria-hidden="true"></section>
-    <section id="confirmacion" class="hidden-section" aria-hidden="true"></section>
+    <!-- ACTO VII.5: Mesa de Regalos -->
+    <section id="mesa-regalos" class="gift-section">
+        <div class="gift-content">
+            <p class="gift-narrative gift-anim">
+                "Su presencia será nuestro mejor regalo.<br>
+                Pero si desean acompañarnos con un detalle,<br>
+                hemos preparado nuestra mesa de regalos."
+            </p>
+            
+            <div class="gift-actions">
+                <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/60018988" target="_blank" rel="noopener noreferrer" class="gift-btn gift-anim">
+                    Liverpool
+                </a>
+                <a href="https://www.amazon.com.mx/wedding/guest-view/378AGN6IEUR5U" target="_blank" rel="noopener noreferrer" class="gift-btn gift-anim">
+                    Amazon
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ACTO VIII: Confirmación de Asistencia -->
+    <section id="confirmacion" class="confirm-section">
+        <div class="confirm-content">
+            <h2 class="confirm-title confirm-anim">Nos encantará verte</h2>
+            
+            <p class="confirm-text confirm-anim">
+                Tu presencia será el regalo más valioso.<br>
+                Ayúdanos confirmando tu asistencia para preparar este día de la mejor manera.
+            </p>
+            
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf3oLlCO2v9vf2WbsvSjFUiZfcpIlbAtYy7VgVfi5VIXhJ3yA/viewform?usp=header" target="_blank" rel="noopener noreferrer" class="confirm-btn confirm-anim">
+                Confirmar asistencia
+            </a>
+            
+            <p class="confirm-note confirm-anim">Agradecemos confirmar antes del 01 de noviembre de 2026.</p>
+        </div>
+    </section>
+
+    <!-- ACTO IX: Con Gratitud (Epílogo Editorial) -->
+    <section id="gratitud" class="thanks-section">
+        <div class="thanks-content">
+            <h2 class="thanks-title thanks-anim">Con Gratitud</h2>
+            
+            <p class="thanks-text thanks-anim">
+                "Nuestra historia no habría sido posible sin todas las personas que hoy caminan a nuestro lado.<br><br>
+                Gracias por formar parte de este capítulo tan importante de nuestras vidas."
+            </p>
+
+            <div class="accordion-container thanks-anim">
+                
+                <!-- CATEGORÍA 1: Padres -->
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Padres</span>
+                        <span class="toggle-icon"></span>
+                    </button>
+                    <div class="accordion-body">
+                        <div class="accordion-body-content">
+                            <div class="thanks-group">
+                                <span class="thanks-role">Padres del novio</span>
+                                <p class="thanks-name">Salvador Zárate Barajas<br>Ángeles Imelda Pérez Rodríguez</p>
+                            </div>
+                            <div class="thanks-group">
+                                <span class="thanks-role">Padres de la novia</span>
+                                <p class="thanks-name">Ricardo Lugo Zúñiga<br>Claudia Yesenia Gómez Robles</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORÍA 2: Padrinos y Madrinas -->
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Padrinos y Madrinas</span>
+                        <span class="toggle-icon"></span>
+                    </button>
+                    <div class="accordion-body">
+                        <div class="accordion-body-content">
+                            <!-- Oficiantes -->
+                            <div class="thanks-group"><span class="thanks-role">Pastor</span><p class="thanks-name">Joaquín Lugo</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Maestra de ceremonia</span><p class="thanks-name">Elizabeth Lugo</p></div>
+                            <!-- Padrinos -->
+                            <div class="thanks-group"><span class="thanks-role">Anillos</span><p class="thanks-name">Ismael Zúñiga & Karina Lugo</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Arras</span><p class="thanks-name">Rogelio Meza & Sonia Meza</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Lazo</span><p class="thanks-name">Ricardo Lugo & Yessi Gómez</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Biblia</span><p class="thanks-name">Refugio Zúñiga</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Copas</span><p class="thanks-name">Salvador Zarate & Imelda Pérez</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Cojines</span><p class="thanks-name">Ramsés Lerma & Blanca Alcaraz</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Ramo</span><p class="thanks-name">Meraly Lugo</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Pastel</span><p class="thanks-name">Paty Maldonado</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Comida</span><p class="thanks-name">Lety Gómez & Socorro Gómez</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Centros de mesas</span><p class="thanks-name">Hafid Zúñiga & María Alemán</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Mesa de dulces</span><p class="thanks-name">Ángel Vargas & Jocelyn Merino</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Invitaciones</span><p class="thanks-name">Josué Lerma</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Recuerditos</span><p class="thanks-name">Andrea Hernández</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Decoración</span><p class="thanks-name">Carlos Villagrana & Cynthia Flores<br>Juan Manuel Zúñiga & Elizabeth Lugo<br>Jannet Lugo</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Salón de eventos</span><p class="thanks-name">Ricardo Lugo & Yessi Gómez</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Luna de miel</span><p class="thanks-name">Rogelio Meza & Sonia Meza</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORÍA 3: Damas y Caballeros de Honor -->
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Damas y Caballeros de Honor</span>
+                        <span class="toggle-icon"></span>
+                    </button>
+                    <div class="accordion-body">
+                        <div class="accordion-body-content">
+                            <div class="thanks-group"><span class="thanks-role">Damo de Honor</span><p class="thanks-name">Emanuel Lerma</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Dama de Honor</span><p class="thanks-name">Meraly Lugo</p></div>
+                            
+                            <div class="thanks-group" style="margin-top: 2rem;"><span class="thanks-role">Damos / Damas</span><p class="thanks-name">Daniel Zúñiga</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Damos / Damas</span><p class="thanks-name">Michelle Meza & Belén Gómez</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Damos / Damas</span><p class="thanks-name">Héctor Martínez & Denise Basto</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Damos / Damas</span><p class="thanks-name">Cristian García & Itzel Venegas</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Damos / Damas</span><p class="thanks-name">David López & Dani Vargas</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Damos / Damas</span><p class="thanks-name">Erick Zárate & Stefany Zárate</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Damos / Damas</span><p class="thanks-name">Ángel Vargas & Jocelyn Merino</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Damos / Damas</span><p class="thanks-name">Josué Lerma & Arely Maldonado</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Damos / Damas</span><p class="thanks-name">Jonathan Zúñiga & Ana Ávalos</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Damos / Damas</span><p class="thanks-name">Jeremy Lugo & Carolina Maldonado</p></div>
+                            <div class="thanks-group"><span class="thanks-role">Damos / Damas</span><p class="thanks-name">Daniel Zárate & Guiselle Gómez</p></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORÍA 4: Pajes -->
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span class="accordion-title">Pajes</span>
+                        <span class="toggle-icon"></span>
+                    </button>
+                    <div class="accordion-body">
+                        <div class="accordion-body-content">
+                            <div class="thanks-group"><p class="thanks-name">Elías Villagrana</p></div>
+                            <div class="thanks-group"><p class="thanks-name">Liam Vargas</p></div>
+                            <div class="thanks-group"><p class="thanks-name">Izabella Rodriguez</p></div>
+                            <div class="thanks-group"><p class="thanks-name">Julieta Villagrana</p></div>
+                            <div class="thanks-group"><p class="thanks-name">Aria Bernal</p></div>
+                            <div class="thanks-group"><p class="thanks-name">Jordania Orozco</p></div>
+                            <div class="thanks-group"><p class="thanks-name">Isabella Orozco</p></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 </body>
 </html>

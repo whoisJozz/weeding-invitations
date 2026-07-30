@@ -1,17 +1,17 @@
 /**
  * event.css
- * Escena única para Fecha y Lugar (Evita CSS duplicado)
+ * FASE QA: Alineación Editorial
  */
 
 .event-section {
     position: relative;
-    width: 100vw;
+    width: 100%; /* Causa raíz corregida: Se elimina 100vw */
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 10;
-    padding: 15vh 10vw;
+    padding: 15vh 0; /* Solo respiración vertical */
 }
 
 .event-content {
@@ -19,7 +19,10 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    max-width: 800px;
+    width: 100%;
+    max-width: 1000px; /* Ancho idéntico al Hero Frame */
+    padding: 0 30px; /* Margen interno para evitar pegar a los bordes */
+    margin: 0 auto;
     gap: 6rem;
 }
 
@@ -129,7 +132,7 @@
     align-items: center;
     justify-content: center;
     padding: 1.2rem 3rem;
-    background: #FDFBF7; /* Simula el cartoncillo premium */
+    background: #FDFBF7; 
     border: 1px solid rgba(200, 162, 74, 0.25);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03), inset 0 1px 3px rgba(255, 255, 255, 1);
     text-decoration: none;
@@ -142,7 +145,6 @@
     font-size: 0.85rem;
     letter-spacing: 0.3em;
     text-transform: uppercase;
-    /* Efecto de lámina dorada impresa */
     background: linear-gradient(135deg, #E6C887 0%, #C8A24A 50%, #9B782E 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

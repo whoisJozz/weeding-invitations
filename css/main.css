@@ -8,7 +8,13 @@
 @import url('components/photo.css');
 @import url('components/countdown.css'); 
 @import url('components/event.css');     
-@import url('components/godparents.css'); /* Añadido: Sprint 07 */
+/* godparents.css HA SIDO ELIMINADO PARA APLICAR EL RFC-017 */
+@import url('components/dresscode.css'); 
+@import url('components/gift.css');      
+@import url('components/confirmation.css');
+@import url('components/thanks.css'); /* NUEVO Sprint 10 */
+
+/* ... (resto del archivo) ... */
 
 *, *::before, *::after {
     box-sizing: border-box;
