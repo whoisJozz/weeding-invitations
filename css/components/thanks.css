@@ -1,6 +1,6 @@
 /**
  * thanks.css
- * Sprint 10: Epílogo Editorial
+ * HOTFIX-002: Typography & Composition Polish
  */
 
 .thanks-section {
@@ -29,7 +29,9 @@
     font-family: var(--font-primary);
     font-size: clamp(3.5rem, 8vw, 5.5rem);
     color: var(--color-gold);
-    line-height: 1.2;
+    /* HOTFIX-002: Prevención de clipping en Safari */
+    line-height: 1.35;
+    padding: 0.2em 0;
     margin-bottom: 2rem;
 }
 
@@ -44,10 +46,9 @@
     max-width: 600px;
 }
 
-/* Estructura del Acordeón Editorial */
 .accordion-container {
     width: 100%;
-    border-top: 1px solid rgba(200, 162, 74, 0.3); /* Línea dorada sutil */
+    border-top: 1px solid rgba(200, 162, 74, 0.3);
 }
 
 .accordion-item {
@@ -58,7 +59,8 @@
     width: 100%;
     background: transparent;
     border: none;
-    padding: 2rem 0;
+    /* HOTFIX-002: Aleja el símbolo de las flores */
+    padding: 2rem 2rem 2rem 0; 
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -75,12 +77,11 @@
     color: var(--color-navy);
 }
 
-/* Iconografía CSS (+) construida sin assets externos */
 .toggle-icon {
     position: relative;
     width: 14px;
     height: 14px;
-    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); /* Rotación fluida */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .toggle-icon::before,
@@ -104,23 +105,21 @@
 }
 
 .accordion-header.active .toggle-icon {
-    transform: rotate(135deg); /* Gira el + para convertirlo en una x perfecta */
+    transform: rotate(135deg);
 }
 
-/* Cuerpo colapsable */
 .accordion-body {
     height: 0;
     overflow: hidden;
     opacity: 0;
-    filter: blur(4px); /* Comienza desenfocado */
-    /* La animación se orquesta exclusivamente por GSAP */
+    filter: blur(4px);
 }
 
 .accordion-body-content {
     padding: 1rem 0 3rem 0;
     display: flex;
     flex-direction: column;
-    gap: 3rem; /* Respiración generosa entre nombres */
+    gap: 3rem;
     text-align: center;
 }
 
@@ -142,7 +141,8 @@
     font-family: var(--font-primary);
     font-size: clamp(2rem, 5vw, 2.5rem);
     color: var(--color-navy);
-    line-height: 1.3;
+    line-height: 1.35;
+    padding: 0.2em 0;
 }
 
 .thanks-anim {

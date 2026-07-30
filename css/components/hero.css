@@ -1,5 +1,6 @@
 /**
  * hero.css
+ * HOTFIX-002: Typography Polish
  */
 .hero-section {
     position: sticky;
@@ -108,8 +109,9 @@
     font-family: var(--font-primary);
     font-size: clamp(3.8rem, 10vw, 8rem);
     color: var(--color-navy);
-    line-height: 1.2; 
-    padding-bottom: 0.1em; 
+    /* HOTFIX-002: Prevención de clipping en Safari */
+    line-height: 1.35; 
+    padding: 0.2em 0; 
     opacity: 0;
 }
 
@@ -117,7 +119,8 @@
     font-family: var(--font-primary);
     font-size: clamp(2rem, 5vw, 4rem);
     color: var(--color-gold);
-    line-height: 1;
+    line-height: 1.35;
+    padding: 0.2em 0;
     opacity: 0;
 }
 

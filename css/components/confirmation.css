@@ -1,6 +1,6 @@
 /**
  * confirmation.css
- * Sprint 09: Acto VIII
+ * HOTFIX-002: Typography Polish
  */
 
 .confirm-section {
@@ -11,7 +11,7 @@
     justify-content: center;
     align-items: center;
     z-index: 10;
-    padding: 15vh 0 20vh 0; /* Espacio extra inferior por ser el cierre actual */
+    padding: 15vh 0 20vh 0;
 }
 
 .confirm-content {
@@ -29,7 +29,9 @@
     font-family: var(--font-primary);
     font-size: clamp(3.5rem, 8vw, 5rem);
     color: var(--color-gold);
-    line-height: 1.2;
+    /* HOTFIX-002: Prevención de clipping en Safari */
+    line-height: 1.35;
+    padding: 0.2em 0;
     margin-bottom: 2rem;
 }
 
@@ -42,7 +44,6 @@
     margin-bottom: 3rem;
 }
 
-/* Botón Editorial */
 .confirm-btn {
     display: inline-flex;
     align-items: center;
@@ -51,7 +52,7 @@
     background: transparent;
     border: 1px solid var(--color-gold);
     font-family: var(--font-secondary);
-    font-weight: 500; /* Montserrat */
+    font-weight: 500;
     font-size: 0.85rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
